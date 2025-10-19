@@ -16,7 +16,6 @@ const Container = styled.div`
   flex-direction: column;
   text-align: center;
   align-items: center;
-  margin: 64px auto 128px;
   max-width: 640px;
 
   > div:nth-of-type(1) {

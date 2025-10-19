@@ -14,10 +14,10 @@
   --primary: #00c1ba;
   --bg-primary: #0c111d;
   --bg-secondary: #161b26;
-  --tertiary: #94969c;
   --placeholder: #85888e;
   --text-primary-900: #f5f5f6;
   --text-secondary-700: #cecfd2;
+  --tertiary-600: #94969c;
 }
 
 * {

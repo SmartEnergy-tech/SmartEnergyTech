@@ -38,7 +38,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 64px auto 128px;
   max-width: 900px;
 
   .title {

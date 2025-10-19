@@ -4,6 +4,8 @@ import { Header } from "../../components/header";
 import { Join } from "./join";
 import { HowYouBecomeCoOwner } from "./how-you-become-co-owner";
 import { Simulate } from "./simulate";
+import { CoOwnerInfo } from "./co-owner-info";
+import { Journey } from "./journey";
 
 export const Landing = () => {
   return (
@@ -13,6 +15,8 @@ export const Landing = () => {
         <Join />
         <HowYouBecomeCoOwner />
         <Simulate />
+        <CoOwnerInfo />
+        <Journey />
       </Content>
     </Container>
   );
@@ -29,4 +33,7 @@ const Content = styled.div`
   max-width: var(--container-max-width-desktop, 1280px);
   width: 100%;
   margin: 0 auto;
+  > div {
+    margin: 64px auto 128px;
+  }
 `;
