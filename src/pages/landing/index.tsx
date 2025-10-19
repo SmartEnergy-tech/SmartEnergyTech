@@ -33,7 +33,7 @@ const Content = styled.div`
   max-width: var(--container-max-width-desktop, 1280px);
   width: 100%;
   margin: 0 auto;
-  > div {
+  > :not(div:first-of-type) {
     margin: 64px auto 128px;
   }
 `;
