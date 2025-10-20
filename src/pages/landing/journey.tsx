@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Title } from "./common";
 
 export const Journey = () => {
   return (
@@ -15,18 +16,6 @@ const Container = styled.div`
   .react-multiple-carousel__arrow {
     display: none;
   }
-`;
-
-const Title = styled.div`
-  color: var(--colors-text-text-primary-900, #f5f5f6);
-  text-align: center;
-
-  /* Display sm/Bold */
-  font-family: var(--Font-family-font-family-display, Outfit);
-  font-size: var(--Font-size-display-sm, 30px);
-  font-style: normal;
-  font-weight: 700;
-  line-height: var(--Line-height-display-sm, 38px); /* 126.667% */
 `;
 
 // const Card = styled.div`

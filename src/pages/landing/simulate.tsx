@@ -1,7 +1,9 @@
 import styled from "styled-components";
-import { RangeInput } from "../../components/input";
 import { useMemo, useState } from "react";
+
+import { RangeInput } from "../../components/input";
 import { PrimaryButton } from "../../components/button";
+import { Info, Title } from "./common";
 
 export const Simulate = () => {
   const [weeklyContribution, setWeeklyContribution] = useState(125);
@@ -16,7 +18,7 @@ export const Simulate = () => {
   return (
     <Container>
       <Title>Simulate Your Stake</Title>
-      <Info>
+      <Info style={{ maxWidth: "608px" }}>
         Use the calculator below to explore how your weekly contribution grows over time and what kind of ownership
         share you unlock.
       </Info>
@@ -71,23 +73,14 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Title = styled.div`
-  margin-bottom: 8px;
-  text-align: center;
-`;
-
-const Info = styled.div`
-  max-width: 608px;
-  text-align: center;
-  margin-bottom: 32px;
-  text-align: center;
-`;
-
 const Cards = styled.div`
   display: flex;
   gap: 4px;
   max-width: 786px;
   width: 100%;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 const Card = styled.div`

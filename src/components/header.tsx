@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 import LogoWithTxt from "../assets/logo-with-txt.svg?react";
+import Logo from "../assets/logo.svg?react";
 import { PrimaryButton, SecondaryButton } from "./button";
 
 export const Header = () => {
   return (
     <Container>
-      <LogoWithTxt />
+      <LogoWithTxt className="logo-with-txt" />
+      <Logo className="logo" />
       <Actions>
         <SecondaryButton>Log in</SecondaryButton>
         <PrimaryButton>Sign up</PrimaryButton>
@@ -21,9 +23,20 @@ const Container = styled.div`
   height: 80px;
   margin: 0 auto;
   display: flex;
-  padding: 0 var(--container-padding-desktop, 32px);
   justify-content: space-between;
   align-items: center;
+  .logo {
+    display: none;
+  }
+  @media (max-width: 769px) {
+    padding: 0px 16px;
+    .logo {
+      display: block;
+    }
+    .logo-with-txt {
+      display: none;
+    }
+  }
 `;
 
 const Actions = styled.div`

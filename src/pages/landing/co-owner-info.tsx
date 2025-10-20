@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { Info, Title } from "./common";
+
 const data = [
   {
     title: "Collective Ownership",
@@ -15,23 +17,41 @@ const data = [
 ];
 export const CoOwnerInfo = () => (
   <Container>
-    {data.map(({ title, info }, index) =>
-      title ? (
-        <Card key={title}>
-          <Title>{title}</Title>
-          <Info>{info}</Info>
-        </Card>
-      ) : (
-        <EmptyCard key={index} />
-      )
-    )}
+    <Title>You're Not a Customer. You're a Co-Owner.</Title>
+    <Info style={{ maxWidth: "716px" }}>
+      ENGC is an association of individuals who co-fund, co-own, and co-benefit from sustainable energy infrastructure.
+      You don't buy a product — you build the solution.
+    </Info>
+    <Cards>
+      {data.map(({ title, info }, index) =>
+        title ? (
+          <Card key={title}>
+            <CardTitle>{title}</CardTitle>
+            <CardInfo>{info}</CardInfo>
+          </Card>
+        ) : (
+          <EmptyCard key={index} />
+        )
+      )}
+    </Cards>
   </Container>
 );
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 769px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Card = styled.div`
@@ -46,8 +66,7 @@ const Card = styled.div`
   border: 2px solid var(--Colors-Border-border-tertiary, #1f242f);
   background: var(--Colors-Background-bg-primary, #0c111d);
 `;
-
-const Title = styled.div`
+const CardTitle = styled.div`
   color: var(--colors-text-text-primary-900, #f5f5f6);
   text-align: center;
 
@@ -57,7 +76,7 @@ const Title = styled.div`
   line-height: var(--Line-height-text-xl, 30px); /* 150% */
 `;
 
-const Info = styled.div`
+const CardInfo = styled.div`
   color: var(--colors-text-text-secondary-700, #cecfd2);
   text-align: center;
 

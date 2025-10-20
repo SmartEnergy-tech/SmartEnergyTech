@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
+import { Info, Title } from "./common";
+
 export const HowYouBecomeCoOwner = () => (
   <Container>
-    <div className="title">How you become a co-owner</div>
-    <div className="info">It's simple. You buy a stake, we build the factory, and you earn as it operates.</div>
+    <Title>How you become a co-owner</Title>
+    <Info>It's simple. You buy a stake, we build the factory, and you earn as it operates.</Info>
     <Blocks>
       <Block>
         <div>Buy an NFT</div>
@@ -39,22 +41,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   max-width: 900px;
-
-  .title {
-    color: var(--text-primary-900, #f5f5f6);
-    font-family: "Outfit";
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 38px; /* 126.667% */
-    margin-bottom: 8px;
-    text-align: center;
-  }
-  .info {
-    color: var(--text-secondary-700, #cecfd2);
-    font-weight: 500;
-    margin-bottom: 32px;
-    text-align: center;
-  }
 `;
 
 const Blocks = styled.div`
@@ -72,6 +58,12 @@ const Blocks = styled.div`
   }
   > div:nth-of-type(4) {
     width: 33%;
+  }
+  @media (max-width: 769px) {
+    flex-direction: column;
+    > div {
+      width: 100% !important;
+    }
   }
 `;
 
@@ -91,4 +83,7 @@ const Block = styled.div`
     color: var(--text-secondary-700, #cecfd2);
   }
   height: 380px;
+  @media (max-width: 769px) {
+    height: auto;
+  }
 `;
