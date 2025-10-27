@@ -3,15 +3,18 @@ import styled from "styled-components";
 import LogoWithTxt from "../assets/logo-with-txt.svg?react";
 import Logo from "../assets/logo.svg?react";
 import { PrimaryButton, SecondaryButton } from "./button";
+import { useNavigate } from "react-router";
 
 export const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <LogoWithTxt className="logo-with-txt" />
       <Logo className="logo" />
       <Actions>
-        <SecondaryButton>Log in</SecondaryButton>
-        <PrimaryButton>Sign up</PrimaryButton>
+        <SecondaryButton onClick={() => navigate("/log-in")}>Log in</SecondaryButton>
+        <PrimaryButton onClick={() => navigate("/sign-up")}>Sign up</PrimaryButton>
       </Actions>
     </Container>
   );

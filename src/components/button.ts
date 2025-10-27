@@ -18,6 +18,9 @@ export const PrimaryButton = styled(ButtonBase)`
   box-shadow: 0 0 0 1px rgba(12, 17, 29, 0.18) inset, 0 -2px 0 0 rgba(81, 81, 82, 0.05) inset,
     0 1px 2px 0 rgba(255, 255, 255, 0) inset;
   color: #fff;
+  &:disabled {
+    opacity: 0.8;
+  }
 `;
 
 export const SecondaryButton = styled(ButtonBase)`

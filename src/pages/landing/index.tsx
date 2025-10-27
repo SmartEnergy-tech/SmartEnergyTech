@@ -10,7 +10,7 @@ import { Supporters } from "./supporters";
 import { Alliances } from "./alliances";
 import { Footer } from "../../components/footer";
 
-export const Landing = () => {
+export const LandingPage = () => {
   return (
     <Container>
       <Content>
