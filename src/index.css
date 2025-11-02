@@ -6,7 +6,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  background-color: #101323;
   --container-max-width-desktop: 1280px;
   --container-padding-desktop: 32px;
   --spacing-lg: 12px;

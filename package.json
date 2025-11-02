@@ -11,10 +11,13 @@
   },
   "dependencies": {
     "@react-oauth/google": "^0.12.2",
+    "effector": "^23.4.4",
+    "effector-react": "^23.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-multi-carousel": "^2.8.6",
     "react-router": "^7.9.4",
+    "react-toastify": "^11.0.5",
     "styled-components": "^6.1.19"
   },
   "devDependencies": {
