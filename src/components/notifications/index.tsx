@@ -127,6 +127,9 @@ const Container = styled.div<{ $close: boolean }>`
   display: flex;
   justify-content: flex-end;
   padding: 24px;
+  @media (max-width: 900px) {
+    padding: 0px;
+  }
 `;
 
 const Content = styled.div<{ $close: boolean }>`
@@ -161,6 +164,9 @@ const Content = styled.div<{ $close: boolean }>`
   width: 100%;
   display: flex;
   padding: var(--spacing-4xl, 32px);
+  @media (max-width: 900px) {
+    padding: 16px;
+  }
   flex-direction: column;
   align-items: center;
   gap: 60px;

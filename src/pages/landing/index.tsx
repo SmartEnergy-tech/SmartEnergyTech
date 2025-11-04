@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { useEffect } from "react";
+import { useNavigate } from "react-router";
+import { useUnit } from "effector-react";
 
 import { Header } from "../../components/header";
 import { Join } from "./join";
@@ -10,7 +13,19 @@ import { Supporters } from "./supporters";
 import { Alliances } from "./alliances";
 import { Footer } from "../../components/footer";
 
+import { $isAuthenticated } from "../../store";
+
 export const LandingPage = () => {
+  const navigate = useNavigate();
+
+  const isAuthenticated = useUnit($isAuthenticated);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/dashboard");
+    }
+  }, [isAuthenticated]);
+
   return (
     <Container>
       <Content>

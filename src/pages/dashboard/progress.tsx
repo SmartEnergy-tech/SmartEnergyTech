@@ -42,6 +42,9 @@ const Cards = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-xl, 16px);
+  @media (max-width: 769px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Card = styled.div`

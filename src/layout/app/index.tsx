@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { useLocation, useNavigate } from "react-router";
-import type { PropsWithChildren } from "react";
+import { useEffect, type PropsWithChildren } from "react";
 
 import LogoWithTxt from "../../assets/logo-with-txt.svg?react";
 import dashboardIcon from "../../assets/navigation/dashboard.svg";
@@ -12,10 +12,11 @@ import notificationIcon from "../../assets/notification.svg";
 import { LanguageSelect } from "./language-select";
 import { ProfileDropdown } from "./profile-dropdown";
 import { useUnit } from "effector-react";
-import { $isNotificationsOpen, setIsOpenNotifications } from "../../store";
+import { $isAuthenticated, $isNotificationsOpen, setIsOpenNotifications } from "../../store";
 import { Notifications } from "../../components/notifications";
+import { MobileMenu } from "./mobile-menu";
 
-const navItems = [
+export const navItems = [
   {
     label: "Dashboard",
     path: "/dashboard",
@@ -49,9 +50,18 @@ export const AppLayout = ({ title, children, backPath }: Props) => {
 
   const showNotifications = useUnit($isNotificationsOpen);
 
+  const isAuthenticated = useUnit($isAuthenticated);
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate("/");
+    }
+  }, [isAuthenticated]);
+
   return (
     <>
       {showNotifications && <Notifications />}
+      <MobileMenu />
       <Container>
         <Navigation>
           <LogoWithTxt />
@@ -67,7 +77,7 @@ export const AppLayout = ({ title, children, backPath }: Props) => {
             </MenuItems>
           </MenuContainer>
         </Navigation>
-        <Content>
+        <Content id="app-content">
           <Header>
             <div
               className="title"
@@ -106,6 +116,12 @@ const Container = styled.div`
   padding: var(--spacing-3xl, 24px);
   gap: var(--spacing-3xl, 24px);
   height: 100%;
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    padding: 0 var(--spacing-xl, 16px);
+    padding-top: calc(var(--spacing-xl, 16px) + 72px);
+    height: fit-content;
+  }
 `;
 
 const Navigation = styled.div`
@@ -115,6 +131,9 @@ const Navigation = styled.div`
   gap: var(--spacing-5xl, 40px);
   border-radius: var(--radius-3xl, 20px);
   background: var(--Colors-Background-bg-primary, #0c111d);
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 const MenuContainer = styled.div`
@@ -196,6 +215,9 @@ const Header = styled.div`
     font-weight: 600;
     line-height: var(--Line-height-display-xs, 32px); /* 133.333% */
   }
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 const Actions = styled.div`
@@ -204,7 +226,7 @@ const Actions = styled.div`
   gap: var(--spacing-lg, 12px);
 `;
 
-const Action = styled.div`
+export const Action = styled.div`
   cursor: pointer;
   user-select: none;
   display: flex;
@@ -222,7 +244,7 @@ const Action = styled.div`
     0 1px 2px 0 var(--Colors-Effects-Shadows-shadow-xs, rgba(255, 255, 255, 0));
 `;
 
-const WalletAction = styled(Action)`
+export const WalletAction = styled(Action)`
   border-radius: var(--radius-2xl, 16px);
   border: 1px solid var(--Colors-Border-border-disabled_subtle, #1f242f);
   background: var(--Colors-Background-bg-primary, #0c111d);

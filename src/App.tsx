@@ -11,6 +11,7 @@ import { AppLayout } from "./layout/app";
 import { InvitePage } from "./pages/invite";
 import { MarketplacePage } from "./pages/marketplace";
 import { MetricsPage } from "./pages/metrics";
+import { ProfilePage } from "./pages/profile";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,14 @@ const router = createBrowserRouter([
     element: (
       <AppLayout title="Metrics">
         <MetricsPage />
+      </AppLayout>
+    ),
+  },
+  {
+    path: "/profile",
+    element: (
+      <AppLayout title="Profile">
+        <ProfilePage />
       </AppLayout>
     ),
   },

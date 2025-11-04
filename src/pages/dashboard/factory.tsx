@@ -126,6 +126,14 @@ const FactoryImgContainer = styled.div`
   border-radius: 20px;
   border: 1px solid var(--Colors-Border-border-secondary, #1f242f);
   background: var(--Colors-Background-bg-primary, #0c111d);
+  @media (max-width: 769px) {
+    padding: 16px;
+  }
+  > img {
+    max-width: 281px;
+    height: auto;
+    width: 100%;
+  }
 `;
 
 const YourPowerBanks = styled.div`
@@ -169,6 +177,9 @@ const PowerBanks = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-lg, 12px);
+  @media (max-width: 769px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const PowerBank = styled.div<{ $selected: boolean }>`

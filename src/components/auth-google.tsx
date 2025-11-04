@@ -2,6 +2,7 @@ import { useGoogleLogin } from "@react-oauth/google";
 import styled from "styled-components";
 
 import googleImg from "../assets/socials/google.svg";
+import { setIsAuthenticated } from "../store";
 
 interface Props {
   type: "login" | "signup";
@@ -10,7 +11,8 @@ interface Props {
 export const GoogleAuth = ({ type }: Props) => {
   const auth = useGoogleLogin({
     onSuccess: (credentialResponse) => {
-      console.log(credentialResponse);
+      setIsAuthenticated(true);
+      localStorage.setItem("jwt", credentialResponse.access_token);
     },
     onError: () => {
       console.log("Login Failed");

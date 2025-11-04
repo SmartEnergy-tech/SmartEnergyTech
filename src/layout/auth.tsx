@@ -1,13 +1,24 @@
-import type { PropsWithChildren } from "react";
+import { useEffect, type PropsWithChildren } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router";
+import { useUnit } from "effector-react";
 
 import loginImg from "../assets/login-img.png";
 import LogoWithTxtImg from "../assets/logo-with-txt.svg?react";
-import { useNavigate } from "react-router";
+import { $isAuthenticated } from "../store";
 
 export const LoginLayout = ({ children }: PropsWithChildren) => {
   const navigate = useNavigate();
+
   const goHome = () => navigate("/");
+
+  const isAuthenticated = useUnit($isAuthenticated);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/dashboard");
+    }
+  }, [isAuthenticated]);
 
   return (
     <Container>

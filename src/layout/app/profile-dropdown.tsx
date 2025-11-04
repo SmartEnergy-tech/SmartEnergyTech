@@ -4,11 +4,26 @@ import styled, { css } from "styled-components";
 import dropdownIcon from "../../assets/dropdown.svg";
 import avatarIcon from "../../assets/avatar.svg";
 import logoutIcon from "../../assets/log-out.svg";
+import { setIsAuthenticated } from "../../store";
+import { useNavigate } from "react-router";
 
 export const ProfileDropdown = () => {
   const [open, setOpen] = useState(false);
 
+  const navigate = useNavigate();
+
   const toggle = () => setOpen(!open);
+
+  const onLogout = () => {
+    toggle();
+    localStorage.removeItem("jwt");
+    setIsAuthenticated(false);
+  };
+
+  const goToProfile = () => {
+    toggle();
+    navigate("/profile");
+  };
 
   return (
     <Container $open={open} onClick={toggle}>
@@ -23,11 +38,11 @@ export const ProfileDropdown = () => {
       </Button>
       {open && (
         <Dropdown>
-          <Option onClick={toggle}>
+          <Option onClick={goToProfile}>
             <img src={avatarIcon} />
             View profile
           </Option>
-          <Option onClick={toggle}>
+          <Option onClick={onLogout}>
             <img src={logoutIcon} />
             Log Out
           </Option>
