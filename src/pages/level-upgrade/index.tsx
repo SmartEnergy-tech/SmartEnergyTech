@@ -1,0 +1,190 @@
+import styled, { css } from "styled-components";
+
+import { levelsData } from "./constants";
+import doneImg from "./done.svg";
+import pendingImg from "./pending.svg";
+import { CurrentStep } from "./current-level";
+
+export const LevelUpgradePage = () => {
+  const currentLevel = 1;
+
+  return (
+    <Container>
+      <Title>Increase Unlocking Rate</Title>
+      <Cards>
+        {levelsData.map((data, index) => {
+          const { title, unlockLimit, unlockingRate, requiredToUpgrade, requiredToUpgradeAdditional } = data;
+          const isCurrent = index + 1 === currentLevel;
+          const isNext = index + 1 === currentLevel + 1;
+          const isPassed = index + 1 < currentLevel;
+          if (isCurrent) {
+            return <CurrentStep data={data} level={index + 1} key={index} />;
+          }
+          return (
+            <Card key={index} $isNext={isNext} $isCurrent={isCurrent}>
+              <TitleWithLabel>
+                {isCurrent && <Label>Your current level</Label>}
+                <CardTitle $gradient={isCurrent || isNext} $isPassed={isPassed}>
+                  {title}
+                </CardTitle>
+              </TitleWithLabel>
+              <Divider />
+              <Row>
+                <LabelWithValue>
+                  <Label>Unlock limit</Label>
+                  <Value $isPassed={isPassed}>{unlockLimit.toLocaleString("en-US")} ENGC</Value>
+                </LabelWithValue>
+                <LabelWithValue>
+                  <Label>Unlocking Rate (Q)</Label>
+                  <Value $isPassed={isPassed}>{unlockingRate.toLocaleString("en-US")} ENGC / Sec</Value>
+                </LabelWithValue>
+              </Row>
+              <Divider />
+              <Row>
+                <LabelWithValue>
+                  <Label>Required to upgrade</Label>
+                  <Value $isPassed={isPassed}>
+                    <img src={isPassed ? doneImg : pendingImg} />
+                    {requiredToUpgrade.toLocaleString("en-US")} ENGC
+                  </Value>
+                </LabelWithValue>
+                <LabelWithValue>
+                  <Value style={{ marginTop: "auto" }} $isPassed={isPassed}>
+                    {requiredToUpgradeAdditional}
+                  </Value>
+                </LabelWithValue>
+              </Row>
+            </Card>
+          );
+        })}
+      </Cards>
+    </Container>
+  );
+};
+
+export const Container = styled.div`
+  border-radius: var(--radius-3xl, 20px);
+  background: var(--Colors-Background-bg-primary, #0c111d);
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-3xl, 24px);
+  gap: var(--spacing-xl, 16px);
+`;
+
+export const TitleWithLabel = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs, 4px);
+`;
+
+export const Title = styled.div`
+  color: var(--colors-text-text-primary-900, #f5f5f6);
+
+  /* Text xl/Semibold */
+  font-family: var(--Font-family-font-family-body, Inter);
+  font-size: var(--Font-size-text-xl, 20px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--Line-height-text-xl, 30px); /* 150% */
+`;
+
+export const Cards = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl, 16px);
+`;
+
+export const Card = styled.div<{ $isNext?: boolean; $isCurrent?: boolean }>`
+  display: flex;
+  padding: var(--spacing-3xl, 24px);
+  flex-direction: column;
+  gap: var(--spacing-2xl, 20px);
+  border-radius: var(--radius-3xl, 20px);
+  border: 1px solid var(--Colors-Border-border-secondary, #1f242f);
+  background: var(--Colors-Background-bg-primary, #0c111d);
+  ${({ $isNext }) =>
+    $isNext &&
+    css`
+      background: var(--Colors-Background-bg-secondary, #161b26);
+    `}
+  ${({ $isCurrent }) =>
+    $isCurrent &&
+    css`
+      gap: var(--spacing-lg, 12px);
+    `}
+`;
+
+export const CardTitle = styled.div<{ $gradient?: boolean; $isPassed?: boolean }>`
+  color: var(--colors-text-text-secondary-700, #cecfd2);
+
+  /* Display xs/Semibold */
+  font-family: var(--Font-family-font-family-display, Outfit);
+  font-size: var(--Font-size-display-xs, 24px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--Line-height-display-xs, 32px); /* 133.333% */
+  ${({ $gradient }) =>
+    $gradient &&
+    css`
+      background: var(--Gradient-Linear-Color-81, linear-gradient(45deg, #4b73ff 0%, #7cf7ff 100%));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    `}
+
+  ${({ $isPassed }) =>
+    $isPassed &&
+    css`
+      color: color: var(--colors-text-text-success-primary-600, #47CD89);
+    `}
+`;
+
+export const Label = styled.div`
+  color: var(--colors-text-text-tertiary-600, #94969c);
+
+  /* Text md/Medium */
+  font-family: var(--Font-family-font-family-body, Inter);
+  font-size: var(--Font-size-text-md, 16px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: var(--Line-height-text-md, 24px); /* 150% */
+`;
+
+export const Divider = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: var(--Colors-Border-border-secondary, #1f242f);
+`;
+
+export const Row = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: var(--spacing-md, 8px);
+`;
+
+export const LabelWithValue = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--spacing-md, 8px);
+`;
+
+export const Value = styled.div<{ $isPassed?: boolean }>`
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md, 8px);
+  color: var(--colors-text-text-primary-900, #f5f5f6);
+
+  /* Text md/Medium */
+  font-family: var(--Font-family-font-family-body, Inter);
+  font-size: var(--Font-size-text-md, 16px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: var(--Line-height-text-md, 24px); /* 150% */
+  ${({ $isPassed }) =>
+    $isPassed &&
+    css`
+      color: var(--colors-text-text-tertiary-600, #94969c);
+    `}
+`;

@@ -88,7 +88,7 @@ export const AppLayout = ({ title, children, backPath }: Props) => {
             >
               {backPath && (
                 <>
-                  <img src={arrowLeftIcon} />
+                  <img src={arrowLeftIcon} style={{ marginRight: "13px" }} />
                   &nbsp;
                 </>
               )}

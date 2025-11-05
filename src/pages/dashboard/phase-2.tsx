@@ -6,9 +6,14 @@ import { PrimaryButton } from "../../components/button";
 import { ProgressIndicator } from "../../components/progress-indicator";
 import maxImg from "../../assets/max.png";
 import ArrowLeftIcon from "../../assets/arrow-left.svg?react";
+import { useNavigate } from "react-router";
 
 export const Phase2 = () => {
-  const haveMax = true;
+  const haveMax = Math.random() > 0.5;
+
+  const navigate = useNavigate();
+
+  const goToLevelUpgrade = () => navigate("/level-upgrade");
 
   return (
     <Container
@@ -44,7 +49,7 @@ export const Phase2 = () => {
             <div>
               <div className="title">You've reached your max at Level 1.</div>
               <div className="info">Upgrade to Level 2 to unlock 1,250 more ENGC at a 2x better rate.</div>
-              <PrimaryButton>
+              <PrimaryButton onClick={goToLevelUpgrade}>
                 Upgrade to Lvl 2<StyledArrow />
               </PrimaryButton>
             </div>
@@ -214,7 +219,7 @@ const Limit = styled.div`
   line-height: var(--Line-height-text-md, 24px); /* 150% */
 `;
 
-const TooltipData = styled.div`
+export const TooltipData = styled.div`
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs, 4px);

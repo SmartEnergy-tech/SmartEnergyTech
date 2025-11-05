@@ -12,6 +12,7 @@ import { InvitePage } from "./pages/invite";
 import { MarketplacePage } from "./pages/marketplace";
 import { MetricsPage } from "./pages/metrics";
 import { ProfilePage } from "./pages/profile";
+import { LevelUpgradePage } from "./pages/level-upgrade";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,15 @@ const router = createBrowserRouter([
     element: (
       <AppLayout title="Profile">
         <ProfilePage />
+      </AppLayout>
+    ),
+  },
+
+  {
+    path: "/level-upgrade",
+    element: (
+      <AppLayout title="Level Upgrade" backPath="/dashboard">
+        <LevelUpgradePage />
       </AppLayout>
     ),
   },
