@@ -11,7 +11,7 @@ interface Props {
   level: number;
 }
 
-export const CurrentStep = ({ data, level }: Props) => {
+export const CurrentLevel = ({ data, level }: Props) => {
   const { title, unlockLimit, unlockingRate } = data;
 
   const unlocked = 250;
@@ -21,13 +21,14 @@ export const CurrentStep = ({ data, level }: Props) => {
       <Card
         style={{
           borderRadius: "var(--radius-3xl, 20px) var(--radius-3xl, 20px) var(--radius-md, 8px) var(--radius-md, 8px)",
+          gap: "var(--spacing-md, 8px)",
         }}
       >
         <TitleWithLabel>
           <Label>Your current level</Label>
           <CardTitle $gradient>{title}</CardTitle>
         </TitleWithLabel>
-        <Divider style={{ gap: "var(--spacing-lg, 12px)" }} />
+        <Divider />
 
         <UnlockLimitInfoContainer>
           <UnlockLimitInfo>
@@ -59,7 +60,7 @@ export const CurrentStep = ({ data, level }: Props) => {
         </CurrentStepInfo>
         <CurrentStepInfo>
           <Label>Unlocking Rate (Q)</Label>
-          <Value>{unlockingRate.toLocaleString("en-US")} ENGC / Sec</Value>
+          <Value>{unlockingRate.toLocaleString("en-US", { minimumFractionDigits: 4 })} ENGC / Sec</Value>
         </CurrentStepInfo>
       </CurrentStepInfos>
     </Container>
@@ -83,6 +84,9 @@ const UnlockLimitInfoContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: var(--spacing-xs, 4px);
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const UnlockLimitInfo = styled.div`
@@ -143,6 +147,17 @@ const CurrentStepInfos = styled.div`
 
   > div:last-of-type {
     border-radius: var(--radius-md, 8px) var(--radius-md, 8px) var(--radius-3xl, 20px) var(--radius-md, 8px);
+  }
+
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr;
+    > div:first-of-type {
+      border-radius: var(--radius-md, 8px);
+    }
+
+    > div:last-of-type {
+      border-radius: var(--radius-md, 8px) var(--radius-md, 8px) var(--radius-3xl, 20px) var(--radius-3xl, 20px);
+    }
   }
 `;
 

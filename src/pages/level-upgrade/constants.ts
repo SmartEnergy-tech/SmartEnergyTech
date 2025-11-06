@@ -11,8 +11,8 @@ export const levelsData: ILevel[] = [
     title: "Level 1",
     unlockLimit: 500,
     unlockingRate: 0.00005,
-    requiredToUpgrade: 0,
-    requiredToUpgradeAdditional: "",
+    requiredToUpgrade: 250,
+    requiredToUpgradeAdditional: "Invite 1 Friend",
   },
   {
     title: "Level 2",

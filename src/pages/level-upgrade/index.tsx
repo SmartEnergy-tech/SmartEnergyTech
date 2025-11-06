@@ -1,61 +1,35 @@
 import styled, { css } from "styled-components";
 
 import { levelsData } from "./constants";
-import doneImg from "./done.svg";
-import pendingImg from "./pending.svg";
-import { CurrentStep } from "./current-level";
+import { CurrentLevel } from "./current-level";
+import { NextLevel } from "./next-level";
+import { CommonLevel } from "./common-level";
+import { PassedLevel } from "./passed-level";
 
 export const LevelUpgradePage = () => {
-  const currentLevel = 1;
+  const currentLevel = 3;
 
   return (
     <Container>
       <Title>Increase Unlocking Rate</Title>
       <Cards>
         {levelsData.map((data, index) => {
-          const { title, unlockLimit, unlockingRate, requiredToUpgrade, requiredToUpgradeAdditional } = data;
           const isCurrent = index + 1 === currentLevel;
           const isNext = index + 1 === currentLevel + 1;
           const isPassed = index + 1 < currentLevel;
-          if (isCurrent) {
-            return <CurrentStep data={data} level={index + 1} key={index} />;
+
+          if (isPassed) {
+            return <PassedLevel key={index} data={data} />;
           }
-          return (
-            <Card key={index} $isNext={isNext} $isCurrent={isCurrent}>
-              <TitleWithLabel>
-                {isCurrent && <Label>Your current level</Label>}
-                <CardTitle $gradient={isCurrent || isNext} $isPassed={isPassed}>
-                  {title}
-                </CardTitle>
-              </TitleWithLabel>
-              <Divider />
-              <Row>
-                <LabelWithValue>
-                  <Label>Unlock limit</Label>
-                  <Value $isPassed={isPassed}>{unlockLimit.toLocaleString("en-US")} ENGC</Value>
-                </LabelWithValue>
-                <LabelWithValue>
-                  <Label>Unlocking Rate (Q)</Label>
-                  <Value $isPassed={isPassed}>{unlockingRate.toLocaleString("en-US")} ENGC / Sec</Value>
-                </LabelWithValue>
-              </Row>
-              <Divider />
-              <Row>
-                <LabelWithValue>
-                  <Label>Required to upgrade</Label>
-                  <Value $isPassed={isPassed}>
-                    <img src={isPassed ? doneImg : pendingImg} />
-                    {requiredToUpgrade.toLocaleString("en-US")} ENGC
-                  </Value>
-                </LabelWithValue>
-                <LabelWithValue>
-                  <Value style={{ marginTop: "auto" }} $isPassed={isPassed}>
-                    {requiredToUpgradeAdditional}
-                  </Value>
-                </LabelWithValue>
-              </Row>
-            </Card>
-          );
+
+          if (isCurrent) {
+            return <CurrentLevel key={index} data={data} level={index + 1} />;
+          }
+          if (isNext) {
+            return <NextLevel key={index} data={data} level={index + 1} />;
+          }
+
+          return <CommonLevel key={index} data={data} />;
         })}
       </Cards>
     </Container>
@@ -92,6 +66,9 @@ export const Cards = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-xl, 16px);
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Card = styled.div<{ $isNext?: boolean; $isCurrent?: boolean }>`
@@ -159,8 +136,11 @@ export const Divider = styled.div`
 export const Row = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-
   gap: var(--spacing-md, 8px);
+
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const LabelWithValue = styled.div`
