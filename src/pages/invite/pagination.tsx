@@ -84,6 +84,7 @@ const ActionBtn = styled.div<{ $isNext?: boolean }>`
   ${({ $isNext }) =>
     $isNext &&
     css`
+      justify-self: flex-end;
       svg {
         rotate: 180deg;
       }
