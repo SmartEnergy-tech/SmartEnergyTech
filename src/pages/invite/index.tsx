@@ -5,6 +5,7 @@ import { PrimaryButton } from "../../components/button";
 import copyIcon from "../../assets/copy.svg";
 import { useState } from "react";
 import { InvitedMembers } from "./invited-members";
+import { ReferralRewards } from "./referrals-rewards";
 
 export const InvitePage = () => {
   const [copied, setCopied] = useState(false);
@@ -19,7 +20,7 @@ export const InvitePage = () => {
 
   return (
     <Container>
-      <MembersCard>
+      <Card>
         <MembersTitle>Earn PWB by Inviting Friends</MembersTitle>
         <ReferralLinkContainer>
           <div className="title">Your Referral Link</div>
@@ -42,8 +43,10 @@ export const InvitePage = () => {
           <div className="info">This is your personal link. When someone registers through it you get rewarded.</div>
         </ReferralLinkContainer>
         <InvitedMembers />
-      </MembersCard>
-      <Card>Info</Card>
+      </Card>
+      <Card>
+        <ReferralRewards />
+      </Card>
     </Container>
   );
 };
@@ -52,19 +55,26 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 444px;
   gap: var(--spacing-3xl, 24px);
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    > div:first-of-type {
+      order: 2;
+    }
+    > div:last-of-type {
+      order: 1;
+    }
+  }
 `;
 
 const Card = styled.div`
   padding: var(--spacing-3xl, 24px);
-
-  border-radius: var(--radius-3xl, 20px);
-  background: var(--Colors-Background-bg-primary, #0c111d);
-`;
-
-const MembersCard = styled(Card)`
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xl, 16px);
+  border-radius: var(--radius-3xl, 20px);
+  background: var(--Colors-Background-bg-primary, #0c111d);
+  height: fit-content;
+  min-width: 0;
 `;
 
 const MembersTitle = styled.div`
@@ -124,13 +134,17 @@ const LinkWithInfo = styled.div`
   border-bottom: 1px solid var(--Colors-Border-border-primary, #333741);
   border-left: 1px solid var(--Colors-Border-border-primary, #333741);
   background: var(--Colors-Background-bg-primary, #0c111d);
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+  overflow: hidden; /* Hides any overflowing content */
+  text-overflow: ellipsis; /* Displays an ellipsis for hidden overflow */
 `;
 
 const LinkTxt = styled.div`
   flex: 1;
-  overflow: hidden;
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+  overflow: hidden; /* Hides any overflowing content */
+  text-overflow: ellipsis; /* Displays an ellipsis for hidden overflow */
   color: var(--colors-text-text-primary-900, #f5f5f6);
-  text-overflow: ellipsis;
 
   /* Text md/Regular */
   font-family: var(--Font-family-font-family-body, Inter);

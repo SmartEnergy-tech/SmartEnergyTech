@@ -10,39 +10,52 @@ export const InvitedMembers = () => {
 
   return (
     <Container>
-      <Row>
-        <HeaderCell>Name</HeaderCell>
-        <HeaderCell>Status</HeaderCell>
-        <HeaderCell>Reward</HeaderCell>
-      </Row>
-      {items.map(({ email, status, reward, avatar }, index) => (
-        <Row key={index}>
-          <Cell>
-            <img src={avatar} width={40} height={40} />
-            <Email>{email}</Email>
-          </Cell>
-          <Cell>
-            <Status $active={status === "active"}>
-              <div className="dot"></div>
-              {status}
-            </Status>
-          </Cell>
-          <Cell>{status === "active" ? <Reward>+{reward} PWB</Reward> : <PendingReward>Pending</PendingReward>}</Cell>
-        </Row>
-      ))}
+      <Content>
+        <div className="data">
+          <Row>
+            <HeaderCell style={{ borderRadius: "12px 0px 0px" }}>Name</HeaderCell>
+            <HeaderCell>Status</HeaderCell>
+            <HeaderCell style={{ borderRadius: "0px 12px 0px 0px" }}>Reward</HeaderCell>
+          </Row>
+          {items.map(({ email, status, reward, avatar }, index) => (
+            <Row key={index}>
+              <Cell>
+                <img src={avatar} width={40} height={40} />
+                <Email>{email}</Email>
+              </Cell>
+              <Cell>
+                <Status $active={status === "active"}>
+                  <div className="dot"></div>
+                  {status}
+                </Status>
+              </Cell>
+              <Cell>
+                {status === "active" ? <Reward>+{reward} PWB</Reward> : <PendingReward>Pending</PendingReward>}
+              </Cell>
+            </Row>
+          ))}
+        </div>
+      </Content>
       <Pagination page={page} pages={Math.ceil(data.length / 5)} onPageChange={(newPage) => setPage(newPage)} />
     </Container>
   );
 };
 
 const Container = styled.div`
-  overflow: hidden;
+  overflow: auto;
   border-radius: var(--radius-xl, 12px);
   border: 1px solid var(--Colors-Border-border-secondary, #1f242f);
   background: var(--Colors-Background-bg-primary, #0c111d);
 
   /* Shadows/shadow-xs */
   box-shadow: 0 1px 2px 0 var(--Colors-Effects-Shadows-shadow-xs, rgba(255, 255, 255, 0));
+`;
+
+const Content = styled.div`
+  overflow: auto;
+  .data {
+    min-width: 600px;
+  }
 `;
 
 const Row = styled.div`
@@ -75,6 +88,9 @@ const Cell = styled.div`
   align-items: center;
   gap: var(--spacing-lg, 12px);
   border-bottom: 1px solid var(--Colors-Border-border-secondary, #1f242f);
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+  overflow: hidden; /* Hides any overflowing content */
+  text-overflow: ellipsis; /* Displays an ellipsis for hidden overflow */
 `;
 
 const Email = styled.div`
@@ -86,6 +102,9 @@ const Email = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+  overflow: hidden; /* Hides any overflowing content */
+  text-overflow: ellipsis; /* Displays an ellipsis for hidden overflow */
 `;
 
 const Status = styled.div<{ $active: boolean }>`
