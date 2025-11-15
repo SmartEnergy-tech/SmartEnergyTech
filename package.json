@@ -15,6 +15,7 @@
     "effector-react": "^23.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-easy-crop": "^5.5.3",
     "react-multi-carousel": "^2.8.6",
     "react-router": "^7.9.4",
     "react-toastify": "^11.0.5",

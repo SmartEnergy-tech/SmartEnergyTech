@@ -251,7 +251,7 @@ const BackToLogin = styled.div`
   }
 `;
 
-const ShowHidePassword = styled.div`
+export const ShowHidePassword = styled.div`
   min-width: 106px;
   user-select: none;
   cursor: pointer;
@@ -279,7 +279,7 @@ const Inputs = styled.div`
   gap: var(--spacing-2xl, 20px);
 `;
 
-const Validations = styled.div`
+export const Validations = styled.div`
   margin-top: var(--spacing-2xl, 20px);
   display: flex;
   flex-direction: column;

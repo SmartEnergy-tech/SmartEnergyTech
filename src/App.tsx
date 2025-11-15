@@ -13,6 +13,7 @@ import { MarketplacePage } from "./pages/marketplace";
 import { MetricsPage } from "./pages/metrics";
 import { ProfilePage } from "./pages/profile";
 import { LevelUpgradePage } from "./pages/level-upgrade";
+import { ChangePasswordPage } from "./pages/change-password";
 
 const router = createBrowserRouter([
   {
@@ -75,6 +76,14 @@ const router = createBrowserRouter([
     element: (
       <AppLayout title="Level Upgrade" backPath="/dashboard">
         <LevelUpgradePage />
+      </AppLayout>
+    ),
+  },
+  {
+    path: "/change-password",
+    element: (
+      <AppLayout title="Change Password" backPath="/profile">
+        <ChangePasswordPage />
       </AppLayout>
     ),
   },

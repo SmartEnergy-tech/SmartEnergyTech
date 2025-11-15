@@ -5,6 +5,8 @@ interface RangeInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   value: number;
   min: number;
   max: number;
+  step?:number;
+  onChange?: (value: any) => void;
 }
 
 export const RangeInput = (props: RangeInputProps) => {
@@ -15,7 +17,14 @@ export const RangeInput = (props: RangeInputProps) => {
 
   const pct = useMemo(() => valueToPct(props.value, props.min, props.max), [props.value, props.min, props.max]);
 
-  return <Slider {...(props as any)} style={{ "--pct": `${pct}%` } as React.CSSProperties} type="range" />;
+  return (
+    <Slider
+      {...(props as any)}
+      style={{ "--pct": `${pct}%` } as React.CSSProperties}
+      type="range"
+      onChange={(e) => props.onChange && props.onChange(+e.target.value)}
+    />
+  );
 };
 
 const Slider = styled.input`

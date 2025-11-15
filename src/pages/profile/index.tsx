@@ -3,43 +3,70 @@ import styled from "styled-components";
 import avatarImg from "../../assets/avatar.svg";
 import changePasswordImg from "../../assets/change-password.svg";
 import arrowLeftImg from "../../assets/arrow-left.svg";
-import { PrimaryButton } from "../../components/button";
+import { PrimaryButton, SecondaryButton } from "../../components/button";
+import { useEffect, useState } from "react";
+import { AvatarModal } from "../../components/avatar-modal";
+import { useUnit } from "effector-react";
+import { $avatar } from "../../store";
+import { DeleteAvatarModal } from "../../components/avatar-modal/delete-avatar";
+import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 export const ProfilePage = () => {
+  const [uploadAvatar, setUploadAvatar] = useState(false);
+  const [deleteAvatar, setDeleteAvatar] = useState(false);
+
+  const avatar = useUnit($avatar);
+
+  useEffect(() => {
+    toast.success("Delete Avatar");
+    toast.error("Delete Avatar");
+  }, []);
+  const navigate = useNavigate();
+
+  const changePassword = () => navigate("/change-password");
+
   return (
-    <Container>
-      <Header>
-        <AvatarContainer>
-          <img src={avatarImg} />
-        </AvatarContainer>
-        <NameAndId>
-          <div className="name">[RegistrationName]</div>
-          <div className="id">ID: 5a4sd89f4sagf49a</div>
-        </NameAndId>
-        <PrimaryButton>Upload Avatar</PrimaryButton>
-      </Header>
-      <InfoContainer>
-        <PersonalInfo>
-          <CardTitle>Personal Information</CardTitle>
-          <PersonalInfoRow>
-            <div className="label">Name</div>
-            <div className="value">[RegistrationName]</div>
-          </PersonalInfoRow>
-          <PersonalInfoRow>
-            <div className="label">Email</div>
-            <div className="value">[email@example.com]</div>
-          </PersonalInfoRow>
-        </PersonalInfo>
-        <SettingsContainer>
-          <CardTitle>Settings</CardTitle>
-          <SettingsButton>
-            <img src={changePasswordImg} />
-            <div className="label">Change Password</div>
-            <img className="arrow" src={arrowLeftImg} />
-          </SettingsButton>
-        </SettingsContainer>
-      </InfoContainer>
-    </Container>
+    <>
+      {deleteAvatar && <DeleteAvatarModal onClose={() => setDeleteAvatar(false)} />}
+      {uploadAvatar && <AvatarModal onClose={() => setUploadAvatar(false)} />}
+      <Container>
+        <Header>
+          <AvatarContainer>
+            <img src={avatar || avatarImg} width={avatar ? "100%" : "32px"} />
+          </AvatarContainer>
+          <NameAndId>
+            <div className="name">[RegistrationName]</div>
+            <div className="id">ID: 5a4sd89f4sagf49a</div>
+          </NameAndId>
+          <AvatarActions>
+            {avatar && <SecondaryButton onClick={() => setDeleteAvatar(true)}>Delete Avatar</SecondaryButton>}
+            <PrimaryButton onClick={() => setUploadAvatar(true)}>Upload Avatar</PrimaryButton>
+          </AvatarActions>
+        </Header>
+        <InfoContainer>
+          <PersonalInfo>
+            <CardTitle>Personal Information</CardTitle>
+            <PersonalInfoRow>
+              <div className="label">Name</div>
+              <div className="value">[RegistrationName]</div>
+            </PersonalInfoRow>
+            <PersonalInfoRow>
+              <div className="label">Email</div>
+              <div className="value">[email@example.com]</div>
+            </PersonalInfoRow>
+          </PersonalInfo>
+          <SettingsContainer>
+            <CardTitle>Settings</CardTitle>
+            <SettingsButton onClick={changePassword}>
+              <img src={changePasswordImg} />
+              <div className="label">Change Password</div>
+              <img className="arrow" src={arrowLeftImg} />
+            </SettingsButton>
+          </SettingsContainer>
+        </InfoContainer>
+      </Container>
+    </>
   );
 };
 
@@ -50,6 +77,9 @@ const Container = styled.div`
   gap: var(--spacing-xl, 16px);
   border-radius: var(--radius-3xl, 20px);
   background: var(--Colors-Background-bg-primary, #0c111d);
+  @media (max-width: 769px) {
+    padding: var(--spacing-2xl, 20px);
+  }
 `;
 
 const Header = styled.div`
@@ -60,28 +90,10 @@ const Header = styled.div`
   border-radius: var(--radius-3xl, 20px);
   border: 1px solid var(--Colors-Border-border-secondary, #1f242f);
   background: var(--Colors-Background-bg-primary, #0c111d);
-  button {
-    display: flex;
-    padding: var(--spacing-md, 8px) var(--spacing-lg, 12px);
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-xs, 4px);
-    border-radius: var(--radius-2xl, 16px);
-    border: 2px solid var(--Gradient-skeuemorphic-gradient-border, rgba(255, 255, 255, 0.12));
-    background: var(--Component-colors-Components-Buttons-Primary-button-primary-bg, #00c1ba);
 
-    /* Shadows/shadow-xs-skeuomorphic */
-    box-shadow: 0 0 0 1px var(--Colors-Effects-Shadows-shadow-skeumorphic-inner-border, rgba(12, 17, 29, 0.18)) inset,
-      0 -2px 0 0 var(--Colors-Effects-Shadows-shadow-skeumorphic-inner, rgba(12, 17, 29, 0.05)) inset,
-      0 1px 2px 0 var(--Colors-Effects-Shadows-shadow-xs, rgba(255, 255, 255, 0));
-    margin-left: auto;
-  }
   @media (max-width: 769px) {
     flex-wrap: wrap;
-    button {
-      margin-left: 0px;
-      width: 100%;
-    }
+    padding: var(--spacing-2xl, 20px);
   }
 `;
 
@@ -102,6 +114,9 @@ const PersonalInfo = styled.div`
   border-radius: var(--radius-3xl, 20px);
   border: 1px solid var(--Colors-Border-border-secondary, #1f242f);
   background: var(--Colors-Background-bg-primary, #0c111d);
+  @media (max-width: 769px) {
+    padding: var(--spacing-2xl, 20px);
+  }
 `;
 
 const CardTitle = styled.div`
@@ -123,6 +138,9 @@ const SettingsContainer = styled.div`
   border-radius: var(--radius-3xl, 20px);
   border: 1px solid var(--Colors-Border-border-secondary, #1f242f);
   background: var(--Colors-Background-bg-primary, #0c111d);
+  @media (max-width: 769px) {
+    padding: var(--spacing-2xl, 20px);
+  }
 `;
 
 const AvatarContainer = styled.div`
@@ -135,9 +153,6 @@ const AvatarContainer = styled.div`
   border-radius: var(--radius-full, 9999px);
   border: 0.75px solid var(--Component-colors-Components-Avatars-avatar-contrast-border, rgba(255, 255, 255, 0.12));
   background: var(--Component-colors-Components-Avatars-avatar-bg, #1f242f);
-  > img {
-    width: 32px;
-  }
 `;
 
 const NameAndId = styled.div`
@@ -214,5 +229,23 @@ const SettingsButton = styled.div`
     margin-left: auto;
     rotate: 180deg;
     width: 24px;
+  }
+`;
+
+const AvatarActions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg, 12px);
+  margin-left: auto;
+  button {
+    padding: var(--spacing-md, 8px) var(--spacing-lg, 12px);
+  }
+  @media (max-width: 769px) {
+    flex-direction: column-reverse;
+    margin-left: 0px;
+    width: 100%;
+    button {
+      width: 100%;
+    }
   }
 `;

@@ -51,3 +51,44 @@ input:-webkit-autofill:active {
   /* Optional: smooth transition to avoid flash */
   transition: background-color 5000s ease-in-out 0s;
 }
+
+.App {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.crop-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 80px;
+}
+
+.Toastify__toast-icon {
+  width: 38px;
+}
+
+.Toastify__toast-theme--dark {
+  border-radius: var(--radius-xl, 12px);
+  border: 1px solid var(--Colors-Border-border-primary, #333741);
+  background: var(--Colors-Background-bg-primary_alt, #161b26);
+  padding: 7px var(--spacing-xl, 16px) 7px 7px;
+  /* Shadows/shadow-lg */
+  box-shadow: 0 12px 16px -4px var(--Colors-Effects-Shadows-shadow-lg_01, rgba(255, 255, 255, 0)),
+    0 4px 6px -2px var(--Colors-Effects-Shadows-shadow-lg_02, rgba(255, 255, 255, 0));
+
+  /* Text sm/Semibold */
+  font-family: var(--Font-family-font-family-body, Inter);
+  font-size: var(--Font-size-text-sm, 14px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
+}
+
+.Toastify__toast--success {
+  color: var(--colors-foreground-fg-primary-900, #fff);
+}

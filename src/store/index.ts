@@ -8,3 +8,9 @@ export const $isAuthenticated = createStore(Boolean(localStorage.getItem("jwt") 
   setIsAuthenticated,
   (_, data) => data
 );
+
+export const setAvatar = createEvent<string>();
+export const $avatar = createStore(localStorage.getItem("avatar") || "").on(setAvatar, (_, newAvatar) => {
+  localStorage.setItem("avatar", newAvatar);
+  return newAvatar;
+});
