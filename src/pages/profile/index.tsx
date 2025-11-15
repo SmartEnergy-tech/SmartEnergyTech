@@ -1,16 +1,15 @@
 import styled from "styled-components";
+import { useState } from "react";
+import { useUnit } from "effector-react";
+import { useNavigate } from "react-router";
 
 import avatarImg from "../../assets/avatar.svg";
 import changePasswordImg from "../../assets/change-password.svg";
 import arrowLeftImg from "../../assets/arrow-left.svg";
 import { PrimaryButton, SecondaryButton } from "../../components/button";
-import { useEffect, useState } from "react";
 import { AvatarModal } from "../../components/avatar-modal";
-import { useUnit } from "effector-react";
 import { $avatar } from "../../store";
 import { DeleteAvatarModal } from "../../components/avatar-modal/delete-avatar";
-import { useNavigate } from "react-router";
-import { toast } from "react-toastify";
 
 export const ProfilePage = () => {
   const [uploadAvatar, setUploadAvatar] = useState(false);
@@ -18,10 +17,6 @@ export const ProfilePage = () => {
 
   const avatar = useUnit($avatar);
 
-  useEffect(() => {
-    toast.success("Delete Avatar");
-    toast.error("Delete Avatar");
-  }, []);
   const navigate = useNavigate();
 
   const changePassword = () => navigate("/change-password");
