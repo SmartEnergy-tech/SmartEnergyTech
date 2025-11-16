@@ -118,7 +118,7 @@ const Container = styled.div`
   height: 100%;
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
-    padding: 0 var(--spacing-xl, 16px);
+    padding: 0 var(--spacing-xl, 16px) var(--spacing-xl, 16px);
     padding-top: calc(var(--spacing-xl, 16px) + 72px);
     height: fit-content;
   }
