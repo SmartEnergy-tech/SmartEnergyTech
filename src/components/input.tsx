@@ -1,31 +1,63 @@
 import { useMemo } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 interface RangeInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   value: number;
   min: number;
   max: number;
-  step?:number;
+  step?: number;
   onChange?: (value: any) => void;
+  showValue?: boolean;
+  showSteps?: boolean;
 }
 
-export const RangeInput = (props: RangeInputProps) => {
+export const RangeInput = ({ showSteps = false, showValue = false, ...props }: RangeInputProps) => {
+  const { onChange, min, max, value, step = 1 } = props;
+
+  const stepsArr = useMemo(() => {
+    if (!showSteps) return [];
+    const steps = [];
+    for (let x = min; x <= max; x += step) {
+      steps.push(x);
+    }
+    return steps;
+  }, [showSteps, step, min, max]);
+
   const valueToPct = (value: number, min: number, max: number) => {
     if (max <= min) return 0;
     return ((value - min) / (max - min)) * 100;
   };
 
-  const pct = useMemo(() => valueToPct(props.value, props.min, props.max), [props.value, props.min, props.max]);
+  const pct = useMemo(() => valueToPct(value, min, max), [value, min, max]);
 
   return (
-    <Slider
-      {...(props as any)}
-      style={{ "--pct": `${pct}%` } as React.CSSProperties}
-      type="range"
-      onChange={(e) => props.onChange && props.onChange(+e.target.value)}
-    />
+    <Container $showSteps={showSteps} $showValue={showValue}>
+      {showValue && <QuantityValue $pct={pct}>{value}</QuantityValue>}
+      <Slider
+        {...(props as any)}
+        style={{ "--pct": `${pct}%` } as React.CSSProperties}
+        type="range"
+        onChange={(e) => onChange && onChange(+e.target.value)}
+      />
+      {showSteps && (
+        <StepsIndicators>
+          {stepsArr.map((el: number) => (
+            <StepIndicator key={el} />
+          ))}
+        </StepsIndicators>
+      )}
+    </Container>
   );
 };
+
+const Container = styled.div<{ $showSteps?: boolean; $showValue?: boolean }>`
+  position: relative;
+  width: 100%;
+  ${({ $showSteps, $showValue }) => css`
+    height: calc(100% + ${$showSteps ? "8px" : "0"} + ${$showValue ? "32px" : "0"});
+    padding-top: ${$showValue ? "32px" : "0"};
+  `}
+`;
 
 const Slider = styled.input`
   width: 100%;
@@ -127,4 +159,42 @@ const Slider = styled.input`
     box-shadow: 0 0 0 2px rgba(0, 241, 232, 0.35);
     border-radius: 10px;
   }
+`;
+
+const QuantityValue = styled.div<{ $pct: number }>`
+  position: absolute;
+  top: 0;
+  left: ${({ $pct }) => `${Math.min(100, Math.max(0, $pct))}%`};
+  transform: translateX(${({ $pct }) => `-${Math.min(100, Math.max(0, $pct))}%`});
+  pointer-events: none;
+  transition: none;
+  min-width: 20px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+
+  font-family: var(--Font-family-font-family-body, Inter);
+  font-size: var(--Font-size-text-lg, 18px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: var(--Line-height-text-lg, 28px);
+
+  background: var(--Gradient-Linear-Color-81, linear-gradient(45deg, #4b73ff 0%, #7cf7ff 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;
+
+const StepsIndicators = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 7px 0px 11px;
+`;
+
+const StepIndicator = styled.div`
+  width: 2px;
+  height: 8px;
+  border-radius: var(--radius-2xl, 16px);
+  background: var(--Colors-Background-bg-tertiary, #1f242f);
 `;

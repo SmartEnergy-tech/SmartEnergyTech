@@ -580,6 +580,11 @@
     redux-thunk "^3.1.0"
     reselect "^5.1.0"
 
+"@revolut/checkout@^1.1.23":
+  version "1.1.23"
+  resolved "https://registry.yarnpkg.com/@revolut/checkout/-/checkout-1.1.23.tgz#340996337820a3340393ecdffb9d0f62418ce094"
+  integrity sha512-IGuG20zs6nAiYlOZJ0NgtvMN59InRkNdkdyYEv7cagXeZCL2C9DgHjHJzKTclzPO8okMyosGcagVGk4kVXyleA==
+
 "@rolldown/binding-android-arm64@1.0.0-beta.41":
   version "1.0.0-beta.41"
   resolved "https://registry.yarnpkg.com/@rolldown/binding-android-arm64/-/binding-android-arm64-1.0.0-beta.41.tgz#a25a145b8055d24389b16f4a71c9f42787d48e06"

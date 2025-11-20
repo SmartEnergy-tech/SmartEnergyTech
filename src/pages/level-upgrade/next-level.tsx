@@ -14,7 +14,6 @@ interface Props {
 
 export const NextLevel = ({ data, level }: Props) => {
   const { title, unlockLimit, unlockingRate, requiredToUpgrade, requiredToUpgradeAdditional } = data;
-  console.log("log => data", data);
 
   const isPassed = true;
 

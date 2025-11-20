@@ -10,8 +10,6 @@ interface Props {
 }
 
 export const Pagination = ({ page, pages, onPageChange }: Props) => {
-  console.log("log => page", page);
-
   const pagesItems = useMemo<(number | string)[]>(() => {
     const total = pages; // total page count (displayed 1..total)
     const current = page + 1; // 0-based -> 1-based

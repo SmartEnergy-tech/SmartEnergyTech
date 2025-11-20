@@ -8,3 +8,10 @@ export const Card = styled.div`
     padding: var(--spacing-2xl, 20px);
   }
 `;
+
+export const Divider = styled.div`
+  height: 1px;
+  width: 100%;
+  background-color: var(--Colors-Border-border-secondary, #1f242f);
+  margin: var(--spacing-md, 8px) 0px;
+`;

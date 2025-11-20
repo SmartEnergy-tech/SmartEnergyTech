@@ -14,6 +14,7 @@ import { MetricsPage } from "./pages/metrics";
 import { ProfilePage } from "./pages/profile";
 import { LevelUpgradePage } from "./pages/level-upgrade";
 import { ChangePasswordPage } from "./pages/change-password";
+import { BuyPWBPage } from "./pages/buy-pwb";
 
 const router = createBrowserRouter([
   {
@@ -84,6 +85,14 @@ const router = createBrowserRouter([
     element: (
       <AppLayout title="Change Password" backPath="/profile">
         <ChangePasswordPage />
+      </AppLayout>
+    ),
+  },
+  {
+    path: "/buy-pwb",
+    element: (
+      <AppLayout title="Buy PWB" backPath="/marketplace">
+        <BuyPWBPage />
       </AppLayout>
     ),
   },
