@@ -11,9 +11,9 @@ export const ButtonBase = styled.button`
   cursor: pointer;
   border: 2px solid transparent;
   /* Text sm/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-sm, 14px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
 `;

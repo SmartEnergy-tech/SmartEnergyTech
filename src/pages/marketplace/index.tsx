@@ -129,11 +129,7 @@ const InfoRow = styled.div`
   gap: 4px;
   flex: 1 0 0;
   > * {
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
     font-weight: 500;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
   .label {
     color: var(--colors-text-text-tertiary-600, #94969c);
@@ -154,9 +150,9 @@ const Divider = styled.div`
 
 const ItemPrice = styled.div`
   /* Text lg/Bold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-lg, 18px);
-  font-style: normal;
+
   font-weight: 700;
   line-height: var(--Line-height-text-lg, 28px); /* 155.556% */
   background: var(--Gradient-Linear-Color-81, linear-gradient(45deg, #4b73ff 0%, #7cf7ff 100%));

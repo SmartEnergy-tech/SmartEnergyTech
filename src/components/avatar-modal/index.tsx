@@ -108,9 +108,9 @@ const Header = styled.div`
     color: var(--colors-text-text-primary-900, #f5f5f6);
 
     /* Text lg/Semibold */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-lg, 18px);
-    font-style: normal;
+
     font-weight: 600;
     line-height: var(--Line-height-text-lg, 28px); /* 155.556% */
   }
@@ -168,18 +168,17 @@ const InfoTxt = styled.div`
   text-align: center;
 
   /* Text xs/Regular */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-xs, 12px);
-  font-style: normal;
-  font-weight: 400;
+
   line-height: var(--Line-height-text-xs, 18px); /* 150% */
   span {
     color: var(--Component-colors-Components-Buttons-Tertiary-color-button-tertiary-color-fg, #cecfd2);
 
     /* Text sm/Semibold */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-sm, 14px);
-    font-style: normal;
+
     font-weight: 600;
     line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
   }

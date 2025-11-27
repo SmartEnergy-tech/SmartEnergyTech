@@ -5,6 +5,7 @@ import PowerBankImg from "../../assets/power-bank.svg?react";
 import { useState } from "react";
 import { PrimaryButton } from "../../components/button";
 import { ProgressIndicator } from "../../components/progress-indicator";
+import { Card } from "../../components/common";
 
 export const Factory = () => {
   const [selected, setSelected] = useState("24");
@@ -90,17 +91,17 @@ const Status = styled.div`
     color: var(--colors-text-text-primary-900, #f5f5f6);
 
     /* Text xl/Semibold */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-xl, 20px);
-    font-style: normal;
+
     font-weight: 600;
     line-height: var(--Line-height-text-xl, 30px); /* 150% */
   }
   .status {
     /* Text xl/Semibold */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-xl, 20px);
-    font-style: normal;
+
     font-weight: 600;
     line-height: var(--Line-height-text-xl, 30px); /* 150% */
 
@@ -111,9 +112,8 @@ const Status = styled.div`
   }
 `;
 
-const Content = styled.div`
+const Content = styled(Card)`
   display: flex;
-  padding: var(--spacing-3xl, 24px);
   flex-direction: column;
   gap: var(--spacing-xl, 16px);
 `;
@@ -145,9 +145,9 @@ const YourPowerBanks = styled.div`
     color: var(--colors-text-text-primary-900, #f5f5f6);
 
     /* Text lg/Semibold */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-lg, 18px);
-    font-style: normal;
+
     font-weight: 600;
     line-height: var(--Line-height-text-lg, 28px); /* 155.556% */
   }
@@ -155,18 +155,18 @@ const YourPowerBanks = styled.div`
     color: var(--colors-text-text-tertiary-600, #94969c);
 
     /* Text lg/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-lg, 18px);
-    font-style: normal;
+
     font-weight: 500;
     line-height: var(--Line-height-text-lg, 28px); /* 155.556% */
     > span {
       color: var(--colors-text-text-secondary-700, #cecfd2);
 
       /* Text lg/Semibold */
-      font-family: var(--Font-family-font-family-body, Inter);
+
       font-size: var(--Font-size-text-lg, 18px);
-      font-style: normal;
+
       font-weight: 600;
       line-height: var(--Line-height-text-lg, 28px);
     }
@@ -206,9 +206,9 @@ const PowerBank = styled.div<{ $selected: boolean }>`
       text-align: center;
 
       /* Text sm/Medium */
-      font-family: var(--Font-family-font-family-body, Inter);
+
       font-size: var(--Font-size-text-sm, 14px);
-      font-style: normal;
+
       font-weight: 500;
       line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
     }
@@ -217,9 +217,9 @@ const PowerBank = styled.div<{ $selected: boolean }>`
     color: var(--colors-text-text-primary-900, #f5f5f6);
 
     /* Text sm/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-sm, 14px);
-    font-style: normal;
+
     font-weight: 500;
     line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
   }
@@ -273,9 +273,9 @@ const UnlockingRate = styled.div`
   gap: var(--spacing-md, 8px);
   > * {
     /* Text lg/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-lg, 18px);
-    font-style: normal;
+
     font-weight: 500;
     line-height: var(--Line-height-text-lg, 28px); /* 155.556% */
   }
@@ -293,9 +293,9 @@ const StyledButton = styled(PrimaryButton)`
   color: var(--Component-colors-Components-Buttons-Primary-button-primary-fg, #fff);
 
   /* Text lg/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-lg, 18px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-text-lg, 28px); /* 155.556% */
 `;

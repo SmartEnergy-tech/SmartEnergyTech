@@ -57,9 +57,9 @@ const Label = styled.div`
   color: var(--colors-text-text-secondary-700, #cecfd2);
 
   /* Text sm/Medium */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-sm, 14px);
-  font-style: normal;
+
   font-weight: 500;
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
 `;
@@ -76,8 +76,7 @@ const Input = styled.input`
 
   /* Shadows/shadow-xs */
   box-shadow: 0 1px 2px 0 var(--Colors-Effects-Shadows-shadow-xs, rgba(255, 255, 255, 0));
-  font-family: var(--Font-family-font-family-body, Inter);
-  font-size: var(--Font-size-text-md, 16px);
+
   color: white;
   &::placeholder {
     color: var(--Colors-Text-text-placeholder, #85888e);

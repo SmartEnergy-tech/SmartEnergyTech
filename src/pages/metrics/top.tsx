@@ -119,7 +119,7 @@ const Place = styled.div<{ $place: number }>`
   * {
     font-family: var(--Font-family-font-family-display, Outfit);
     font-size: var(--Font-size-display-xs, 24px);
-    font-style: normal;
+
     font-weight: 600;
     line-height: var(--Line-height-display-xs, 32px); /* 133.333% */
   }
@@ -190,19 +190,17 @@ const UserName = styled.div`
   color: var(--colors-text-text-secondary-700, #cecfd2);
 
   /* Text lg/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-lg, 18px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-text-lg, 28px); /* 155.556% */
   @media (max-width: 769px) {
     color: var(--colors-text-text-secondary-700, #cecfd2);
 
     /* Text md/Bold */
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
+
     font-weight: 700;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
 `;
 
@@ -210,10 +208,9 @@ const UserId = styled.div`
   color: var(--colors-text-text-tertiary-600, #94969c);
 
   /* Text sm/Regular */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-sm, 14px);
-  font-style: normal;
-  font-weight: 400;
+
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
   white-space: nowrap;
   @media (max-width: 769px) {
@@ -228,9 +225,9 @@ const UserAmount = styled.div`
   color: var(--colors-text-text-primary-900, #f5f5f6);
 
   /* Text lg/Bold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-lg, 18px);
-  font-style: normal;
+
   font-weight: 700;
   line-height: var(--Line-height-text-lg, 28px); /* 155.556% */
 `;

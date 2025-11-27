@@ -125,7 +125,7 @@ const Title = styled.div`
   /* Display sm/Semibold */
   font-family: var(--Font-family-font-family-display, Outfit);
   font-size: var(--Font-size-display-sm, 30px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-display-sm, 38px); /* 126.667% */
   margin-bottom: var(--spacing-lg, 12px);
@@ -135,12 +135,6 @@ const Info = styled.div`
   color: var(--colors-text-text-tertiary-600, #94969c);
   text-align: center;
 
-  /* Text md/Regular */
-  font-family: var(--Font-family-font-family-body, Inter);
-  font-size: var(--Font-size-text-md, 16px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: var(--Line-height-text-md, 24px); /* 150% */
   margin-bottom: var(--spacing-4xl, 32px);
   span {
     user-select: none;
@@ -148,9 +142,9 @@ const Info = styled.div`
     color: var(--Component-colors-Components-Buttons-Tertiary-color-button-tertiary-color-fg, #cecfd2);
 
     /* Text sm/Semibold */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-sm, 14px);
-    font-style: normal;
+
     font-weight: 600;
     line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
   }
@@ -180,9 +174,9 @@ const BackToLogin = styled.div`
   color: var(--Component-colors-Components-Buttons-Tertiary-button-tertiary-fg, #94969c);
 
   /* Text sm/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-sm, 14px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
 

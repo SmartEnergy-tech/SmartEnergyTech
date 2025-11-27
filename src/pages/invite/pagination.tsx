@@ -132,9 +132,9 @@ const ActionBtn = styled.div<{ $isNext?: boolean; $disabled: boolean }>`
     color: var(--Component-colors-Components-Buttons-Secondary-button-secondary-fg, #cecfd2);
 
     /* Text sm/Semibold */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-sm, 14px);
-    font-style: normal;
+
     font-weight: 600;
     line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
   }
@@ -164,8 +164,7 @@ const MobilePages = styled.div`
   color: var(--colors-foreground-fg-secondary-700, #cecfd2);
   font-family: Inter;
   font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
+
   line-height: 20px; /* 142.857% */
   span {
     font-weight: 500;
@@ -185,9 +184,9 @@ const Page = styled.div<{ $current: boolean }>`
   text-align: center;
 
   /* Text sm/Medium */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-sm, 14px);
-  font-style: normal;
+
   font-weight: 500;
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
 

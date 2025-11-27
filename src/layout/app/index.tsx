@@ -143,10 +143,9 @@ const MenuContainer = styled.div`
     color: var(--colors-text-text-tertiary-600, #94969c);
 
     /* Text sm/Regular */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-sm, 14px);
-    font-style: normal;
-    font-weight: 400;
+
     line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
     margin-bottom: var(--spacing-2xl, 20px);
   }
@@ -169,12 +168,7 @@ const MenuItem = styled.div<{ $active: boolean }>`
 
   color: var(--colors-text-text-secondary-700, #cecfd2);
 
-  /* Text md/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
-  font-size: var(--Font-size-text-md, 16px);
-  font-style: normal;
   font-weight: 600;
-  line-height: var(--Line-height-text-md, 24px); /* 150% */
 
   ${({ $active }) =>
     $active &&
@@ -211,7 +205,7 @@ const Header = styled.div`
     /* Display xs/Semibold */
     font-family: var(--Font-family-font-family-display, Outfit);
     font-size: var(--Font-size-display-xs, 24px);
-    font-style: normal;
+
     font-weight: 600;
     line-height: var(--Line-height-display-xs, 32px); /* 133.333% */
   }
@@ -254,9 +248,9 @@ export const WalletAction = styled(Action)`
   color: var(--Colors-Foreground-fg-disabled, #85888e);
 
   /* Text sm/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-sm, 14px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
 `;

@@ -178,9 +178,9 @@ const Title = styled.div`
   color: var(--colors-text-text-primary-900, #f5f5f6);
 
   /* Text lg/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-lg, 18px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-text-lg, 28px); /* 155.556% */
   margin-bottom: var(--spacing-xl, 16px);

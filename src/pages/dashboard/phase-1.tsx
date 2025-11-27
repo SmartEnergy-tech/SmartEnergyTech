@@ -27,9 +27,9 @@ const Content = styled.div`
   gap: var(--spacing-md, 8px);
   > div {
     /* Text lg/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-lg, 18px);
-    font-style: normal;
+
     font-weight: 500;
     line-height: var(--Line-height-text-lg, 28px); /* 155.556% */
   }

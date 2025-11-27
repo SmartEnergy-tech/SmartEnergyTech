@@ -71,7 +71,7 @@ const CardTitle = styled.div`
   text-align: center;
 
   font-size: var(--Font-size-text-xl, 20px);
-  font-style: normal;
+
   font-weight: 700;
   line-height: var(--Line-height-text-xl, 30px); /* 150% */
 `;
@@ -79,13 +79,6 @@ const CardTitle = styled.div`
 const CardInfo = styled.div`
   color: var(--colors-text-text-secondary-700, #cecfd2);
   text-align: center;
-
-  /* Text md/Regular */
-  font-family: var(--Font-family-font-family-body, Inter);
-  font-size: var(--Font-size-text-md, 16px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: var(--Line-height-text-md, 24px); /* 150% */
 `;
 
 const EmptyCard = styled.div`

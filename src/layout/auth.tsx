@@ -82,10 +82,9 @@ const Footer = styled.div`
   color: var(--colors-text-text-tertiary-600, #94969c);
 
   /* Text sm/Regular */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-sm, 14px);
-  font-style: normal;
-  font-weight: 400;
+
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
   @media (max-width: 1200px) {
     display: none;

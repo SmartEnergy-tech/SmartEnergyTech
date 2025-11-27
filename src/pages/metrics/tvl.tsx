@@ -121,12 +121,7 @@ const Content = styled.div`
   .title {
     color: var(--colors-text-text-primary-900, #f5f5f6);
 
-    /* Text md/Semibold */
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
     font-weight: 600;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
   @media (max-width: 769px) {
     padding: var(--spacing-2xl, 20px) var(--spacing-xl, 16px);
@@ -164,7 +159,7 @@ const ChartContainerInfo = styled.div`
     /* Display md/Semibold */
     font-family: var(--Font-family-font-family-display, Outfit);
     font-size: var(--Font-size-display-md, 36px);
-    font-style: normal;
+
     font-weight: 600;
     line-height: var(--Line-height-display-md, 44px); /* 122.222% */
     letter-spacing: -0.72px;
@@ -181,9 +176,9 @@ const ChartContainerInfo = styled.div`
     text-overflow: ellipsis;
 
     /* Text sm/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-sm, 14px);
-    font-style: normal;
+
     font-weight: 500;
     line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
     span {
@@ -191,9 +186,9 @@ const ChartContainerInfo = styled.div`
       align-items: center;
       margin-right: var(--spacing-md, 8px);
       /* Text sm/Medium */
-      font-family: var(--Font-family-font-family-body, Inter);
+
       font-size: var(--Font-size-text-sm, 14px);
-      font-style: normal;
+
       font-weight: 500;
       line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
       color: var(--colors-text-text-success-primary-600, #47cd89);

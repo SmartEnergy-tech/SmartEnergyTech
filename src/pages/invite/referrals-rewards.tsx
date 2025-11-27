@@ -68,15 +68,15 @@ const Header = styled.div`
   background: var(--Colors-Background-bg-secondary, #161b26);
   position: relative;
   overflow: hidden;
+  @media (max-width: 769px) {
+    padding: var(--spacing-2xl, 20px);
+  }
   .title {
     color: var(--colors-text-text-tertiary-600, #94969c);
 
     /* Text md/Bold */
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
+
     font-weight: 700;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
   .amount {
     display: flex;
@@ -88,7 +88,7 @@ const Header = styled.div`
       /* Display xs/Semibold */
       font-family: var(--Font-family-font-family-display, Outfit);
       font-size: var(--Font-size-display-xs, 24px);
-      font-style: normal;
+
       font-weight: 600;
       line-height: var(--Line-height-display-xs, 32px); /* 133.333% */
     }
@@ -136,11 +136,8 @@ const Bonuses = styled.div`
     color: var(--colors-text-text-tertiary-600, #94969c);
 
     /* Text md/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
+
     font-weight: 500;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
   .row {
     display: flex;
@@ -148,11 +145,8 @@ const Bonuses = styled.div`
     width: 100%;
     > * {
       /* Text md/Medium */
-      font-family: var(--Font-family-font-family-body, Inter);
-      font-size: var(--Font-size-text-md, 16px);
-      font-style: normal;
+
       font-weight: 500;
-      line-height: var(--Line-height-text-md, 24px); /* 150% */
     }
     .dot {
       width: 6px;
@@ -196,11 +190,8 @@ const Info = styled.div`
     color: var(--colors-text-text-secondary-700, #cecfd2);
 
     /* Text md/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
+
     font-weight: 500;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
   .value {
     color: var(--colors-text-text-primary-900, #f5f5f6);
@@ -208,7 +199,7 @@ const Info = styled.div`
     /* Display xs/Semibold */
     font-family: var(--Font-family-font-family-display, Outfit);
     font-size: var(--Font-size-display-xs, 24px);
-    font-style: normal;
+
     font-weight: 600;
     line-height: var(--Line-height-display-xs, 32px); /* 133.333% */
   }

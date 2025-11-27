@@ -57,18 +57,18 @@ const Title = styled.span`
   color: var(--Colors-Text-text-disabled, #85888e);
 
   /* Text lg/Medium */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-lg, 18px);
-  font-style: normal;
+
   font-weight: 500;
   line-height: var(--Line-height-text-lg, 28px); /* 155.556% */
   > span {
     color: var(--Colors-Text-text-disabled, #85888e);
 
     /* Text lg/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-lg, 18px);
-    font-style: normal;
+
     font-weight: 700;
     line-height: var(--Line-height-text-lg, 28px);
   }

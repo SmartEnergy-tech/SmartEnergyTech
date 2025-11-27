@@ -175,21 +175,14 @@ const ProfileInfo = styled.div`
       color: var(--colors-text-text-primary-900, #f5f5f6);
 
       /* Text xl/Semibold */
-      font-family: var(--Font-family-font-family-body, Inter);
+
       font-size: var(--Font-size-text-xl, 20px);
-      font-style: normal;
+
       font-weight: 600;
       line-height: var(--Line-height-text-xl, 30px); /* 150% */
     }
     .id {
       color: var(--colors-text-text-tertiary-600, #94969c);
-
-      /* Text md/Regular */
-      font-weight: 400;
-      font-family: var(--Font-family-font-family-body, Inter);
-      font-size: var(--Font-size-text-md, 16px);
-      font-style: normal;
-      line-height: var(--Line-height-text-md, 24px); /* 150% */
     }
   }
 `;
@@ -215,9 +208,9 @@ const ProfileButton = styled.div`
   color: var(--Component-colors-Components-Buttons-Secondary-button-secondary-fg, #cecfd2);
 
   /* Text sm/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-sm, 14px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
 `;
@@ -248,9 +241,9 @@ const WalletAction = styled.div`
   color: var(--Colors-Foreground-fg-disabled, #85888e);
 
   /* Text sm/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-sm, 14px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
 `;

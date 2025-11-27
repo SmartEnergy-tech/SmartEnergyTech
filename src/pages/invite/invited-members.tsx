@@ -74,9 +74,9 @@ const HeaderCell = styled.div`
   color: var(--colors-text-text-tertiary-600, #94969c);
 
   /* Text xs/Medium */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-xs, 12px);
-  font-style: normal;
+
   font-weight: 500;
   line-height: var(--Line-height-text-xs, 18px); /* 150% */
 `;
@@ -97,9 +97,9 @@ const Email = styled.div`
   color: var(--colors-text-text-primary-900, #f5f5f6);
 
   /* Text sm/Medium */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-sm, 14px);
-  font-style: normal;
+
   font-weight: 500;
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
   white-space: nowrap; /* Prevents text from wrapping to the next line */
@@ -117,9 +117,9 @@ const Status = styled.div<{ $active: boolean }>`
   text-align: center;
 
   /* Text xs/Medium */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-xs, 12px);
-  font-style: normal;
+
   font-weight: 500;
   line-height: var(--Line-height-text-xs, 18px); /* 150% */
   text-transform: capitalize;
@@ -152,9 +152,9 @@ const Reward = styled.div`
   text-align: center;
 
   /* Text xs/Medium */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-xs, 12px);
-  font-style: normal;
+
   font-weight: 500;
   line-height: var(--Line-height-text-xs, 18px); /* 150% */
 `;
@@ -169,9 +169,9 @@ const PendingReward = styled.div`
   text-align: center;
 
   /* Text xs/Medium */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-xs, 12px);
-  font-style: normal;
+
   font-weight: 500;
   line-height: var(--Line-height-text-xs, 18px); /* 150% */
 `;

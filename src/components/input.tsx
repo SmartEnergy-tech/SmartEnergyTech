@@ -173,9 +173,8 @@ const QuantityValue = styled.div<{ $pct: number }>`
   display: flex;
   justify-content: center;
 
-  font-family: var(--Font-family-font-family-body, Inter);
   font-size: var(--Font-size-text-lg, 18px);
-  font-style: normal;
+
   font-weight: 700;
   line-height: var(--Line-height-text-lg, 28px);
 

@@ -85,7 +85,7 @@ const Title = styled.div`
   /* Display md/Semibold */
   font-family: var(--Font-family-font-family-display, Outfit);
   font-size: var(--Font-size-display-md, 36px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-display-md, 44px); /* 122.222% */
   letter-spacing: -0.72px;
@@ -95,12 +95,6 @@ const Title = styled.div`
 const Info = styled.div`
   color: var(--colors-text-text-tertiary-600, #94969c);
 
-  /* Text md/Regular */
-  font-family: var(--Font-family-font-family-body, Inter);
-  font-size: var(--Font-size-text-md, 16px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: var(--Line-height-text-md, 24px); /* 150% */
   margin-bottom: var(--spacing-4xl, 32px);
 `;
 
@@ -124,12 +118,7 @@ const ShowHidePassword = styled.div`
   background: var(--Component-colors-Components-Buttons-Secondary-button-secondary-bg, #161b26);
   color: var(--Component-colors-Components-Buttons-Secondary-button-secondary-fg, #cecfd2);
 
-  /* Text md/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
-  font-size: var(--Font-size-text-md, 16px);
-  font-style: normal;
   font-weight: 600;
-  line-height: var(--Line-height-text-md, 24px); /* 150% */
 `;
 
 const RememberMe = styled.div`
@@ -146,9 +135,9 @@ const ForgotPassword = styled.div`
   color: var(--Component-colors-Components-Buttons-Tertiary-color-button-tertiary-color-fg, #cecfd2);
 
   /* Text sm/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-sm, 14px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
 `;
@@ -162,10 +151,9 @@ const SignUp = styled.div`
   color: var(--colors-text-text-tertiary-600, #94969c);
 
   /* Text sm/Regular */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-sm, 14px);
-  font-style: normal;
-  font-weight: 400;
+
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
   > div {
     cursor: pointer;
@@ -173,9 +161,9 @@ const SignUp = styled.div`
     color: var(--Component-colors-Components-Buttons-Tertiary-color-button-tertiary-color-fg, #cecfd2);
 
     /* Text sm/Semibold */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-sm, 14px);
-    font-style: normal;
+
     font-weight: 600;
     line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
   }

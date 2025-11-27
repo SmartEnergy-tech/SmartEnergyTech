@@ -176,30 +176,20 @@ const Name = styled.div`
   color: var(--colors-text-text-primary-900, #f5f5f6);
 
   /* Text lg/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-lg, 18px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-text-lg, 28px); /* 155.556% */
 `;
 const Date = styled.div`
   color: var(--colors-text-text-tertiary-600, #94969c);
-
-  /* Text md/Regular */
-  font-family: var(--Font-family-font-family-body, Inter);
-  font-size: var(--Font-size-text-md, 16px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: var(--Line-height-text-md, 24px); /* 150% */
 `;
 
 const Quote = styled.div`
   color: var(--colors-text-text-secondary-700, #cecfd2);
 
   /* Text md/Regular italic */
-  font-family: var(--Font-family-font-family-body, Inter);
-  font-size: var(--Font-size-text-md, 16px);
+
   font-style: italic;
-  font-weight: 400;
-  line-height: var(--Line-height-text-md, 24px); /* 150% */
 `;

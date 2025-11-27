@@ -74,12 +74,7 @@ const UpgradeButton = styled(PrimaryButton)`
   gap: var(--spacing-sm, 6px);
   border-radius: var(--radius-2xl, 16px);
 
-  /* Text md/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
-  font-size: var(--Font-size-text-md, 16px);
-  font-style: normal;
   font-weight: 600;
-  line-height: var(--Line-height-text-md, 24px); /* 150% */
 
   &:disabled {
     color: var(--Colors-Foreground-fg-disabled, #85888e);

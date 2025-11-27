@@ -87,11 +87,8 @@ const Info = styled.div`
     color: var(--colors-text-text-secondary-700, #cecfd2);
 
     /* Text md/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
+
     font-weight: 500;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
   .value {
     display: flex;
@@ -121,9 +118,9 @@ const Info = styled.div`
       text-overflow: ellipsis;
 
       /* Text sm/Medium */
-      font-family: var(--Font-family-font-family-body, Inter);
+
       font-size: var(--Font-size-text-sm, 14px);
-      font-style: normal;
+
       font-weight: 500;
       line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
       span {
@@ -131,9 +128,9 @@ const Info = styled.div`
         align-items: center;
         margin-right: var(--spacing-md, 8px);
         /* Text sm/Medium */
-        font-family: var(--Font-family-font-family-body, Inter);
+
         font-size: var(--Font-size-text-sm, 14px);
-        font-style: normal;
+
         font-weight: 500;
         line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
         color: var(--colors-text-text-success-primary-600, #47cd89);

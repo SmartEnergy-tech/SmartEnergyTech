@@ -7,7 +7,7 @@ export const Title = styled.div`
   /* Display sm/Bold */
   font-family: var(--Font-family-font-family-display, Outfit);
   font-size: var(--Font-size-display-sm, 30px);
-  font-style: normal;
+
   font-weight: 700;
   line-height: var(--Line-height-display-sm, 38px); /* 126.667% */
   margin: 0px auto 8px;
@@ -21,11 +21,9 @@ export const Info = styled.div`
   text-align: center;
 
   /* Text md/Medium */
-  font-family: var(--Font-family-font-family-body, Inter);
-  font-size: var(--Font-size-text-md, 16px);
-  font-style: normal;
+
   font-weight: 500;
-  line-height: var(--Line-height-text-md, 24px); /* 150% */
+
   margin: 0px auto 32px;
   @media (max-width: 769px) {
     flex-direction: column;

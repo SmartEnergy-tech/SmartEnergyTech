@@ -81,9 +81,9 @@ const MembersTitle = styled.div`
   color: var(--colors-text-text-primary-900, #f5f5f6);
 
   /* Text xl/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-xl, 20px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-text-xl, 30px); /* 150% */
 `;
@@ -100,9 +100,9 @@ const ReferralLinkContainer = styled.div`
     color: var(--colors-text-text-secondary-700, #cecfd2);
 
     /* Text sm/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-sm, 14px);
-    font-style: normal;
+
     font-weight: 500;
     line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
   }
@@ -110,10 +110,9 @@ const ReferralLinkContainer = styled.div`
     color: var(--colors-text-text-tertiary-600, #94969c);
 
     /* Text sm/Regular */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-sm, 14px);
-    font-style: normal;
-    font-weight: 400;
+
     line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
   }
 `;
@@ -124,6 +123,7 @@ const LinkWithButton = styled.div`
 `;
 
 const LinkWithInfo = styled.div`
+  min-width: 1px;
   flex: 1;
   display: flex;
   padding: var(--spacing-md, 8px) var(--spacing-lg, 12px);
@@ -134,9 +134,6 @@ const LinkWithInfo = styled.div`
   border-bottom: 1px solid var(--Colors-Border-border-primary, #333741);
   border-left: 1px solid var(--Colors-Border-border-primary, #333741);
   background: var(--Colors-Background-bg-primary, #0c111d);
-  white-space: nowrap; /* Prevents text from wrapping to the next line */
-  overflow: hidden; /* Hides any overflowing content */
-  text-overflow: ellipsis; /* Displays an ellipsis for hidden overflow */
 `;
 
 const LinkTxt = styled.div`
@@ -145,13 +142,6 @@ const LinkTxt = styled.div`
   overflow: hidden; /* Hides any overflowing content */
   text-overflow: ellipsis; /* Displays an ellipsis for hidden overflow */
   color: var(--colors-text-text-primary-900, #f5f5f6);
-
-  /* Text md/Regular */
-  font-family: var(--Font-family-font-family-body, Inter);
-  font-size: var(--Font-size-text-md, 16px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: var(--Line-height-text-md, 24px); /* 150% */
 `;
 
 const CopyButton = styled(PrimaryButton)`
@@ -164,9 +154,9 @@ const CopyButton = styled(PrimaryButton)`
   color: var(--Component-colors-Components-Buttons-Primary-button-primary-fg, #fff);
 
   /* Text sm/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-sm, 14px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
 `;

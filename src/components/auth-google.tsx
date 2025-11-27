@@ -51,10 +51,5 @@ const Button = styled.button`
     0 1px 2px 0 var(--Colors-Effects-Shadows-shadow-xs, rgba(255, 255, 255, 0));
   color: var(--colors-text-text-secondary-700, #cecfd2);
 
-  /* Text md/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
-  font-size: var(--Font-size-text-md, 16px);
-  font-style: normal;
   font-weight: 600;
-  line-height: var(--Line-height-text-md, 24px); /* 150% */
 `;

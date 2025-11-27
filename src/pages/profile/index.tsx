@@ -118,9 +118,9 @@ const CardTitle = styled.div`
   color: var(--colors-text-text-primary-900, #f5f5f6);
 
   /* Text lg/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-lg, 18px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-text-lg, 28px); /* 155.556% */
 `;
@@ -160,21 +160,14 @@ const NameAndId = styled.div`
     color: var(--colors-text-text-primary-900, #f5f5f6);
 
     /* Text xl/Semibold */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-xl, 20px);
-    font-style: normal;
+
     font-weight: 600;
     line-height: var(--Line-height-text-xl, 30px); /* 150% */
   }
   .id {
     color: var(--colors-text-text-tertiary-600, #94969c);
-
-    /* Text md/Regular */
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
-    font-weight: 400;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
 `;
 
@@ -184,14 +177,9 @@ const PersonalInfoRow = styled.div`
   gap: var(--spacing-md, 8px);
   > * {
     /* Text md/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
   .label {
     color: var(--colors-text-text-tertiary-600, #94969c);
-    font-weight: 400;
   }
 
   .value {
@@ -214,11 +202,8 @@ const SettingsButton = styled.div`
     color: var(--colors-text-text-primary-900, #f5f5f6);
 
     /* Text md/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
+
     font-weight: 500;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
   .arrow {
     margin-left: auto;

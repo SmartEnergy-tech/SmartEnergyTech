@@ -82,9 +82,9 @@ const PwbDetails = styled.div`
   width: 100%;
   .price {
     /* Text lg/Bold */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-lg, 18px);
-    font-style: normal;
+
     font-weight: 700;
     line-height: var(--Line-height-text-lg, 28px); /* 155.556% */
     background: var(--Gradient-Linear-Color-81, linear-gradient(45deg, #4b73ff 0%, #7cf7ff 100%));
@@ -96,22 +96,17 @@ const PwbDetails = styled.div`
     color: var(--colors-text-text-tertiary-600, #94969c);
 
     /* Text md/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
+
     font-weight: 500;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
+
     margin-bottom: var(--spacing-md, 8px);
   }
   .duration-value {
     color: var(--colors-text-text-primary-900, #f5f5f6);
 
     /* Text md/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
+
     font-weight: 500;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
 `;
 
@@ -124,11 +119,8 @@ const QuantityCard = styled(Card)`
   border: 1px solid var(--Colors-Border-border-secondary, #1f242f);
   .title {
     color: var(--colors-text-text-primary-900, #f5f5f6);
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
+
     font-weight: 500;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
 `;
 
@@ -151,11 +143,8 @@ const ToPayRow = styled.div`
   .totalLabel,
   .totalAmount {
     /* Text md/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
+
     font-weight: 500;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
   .label {
     color: var(--colors-text-text-tertiary-600, #94969c);

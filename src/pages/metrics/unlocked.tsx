@@ -30,7 +30,7 @@ export const Unlocked = () => {
 const StyledInfoCard = styled(InfoCard)`
   .value {
     font-size: var(--Font-size-display-md, 36px);
-    font-style: normal;
+
     font-weight: 600;
     line-height: var(--Line-height-display-md, 44px); /* 122.222% */
     letter-spacing: -0.72px;
@@ -53,9 +53,9 @@ const ValueBadge = styled.div`
   text-align: center;
 
   /* Text sm/Medium */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-sm, 14px);
-  font-style: normal;
+
   font-weight: 500;
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
   svg {

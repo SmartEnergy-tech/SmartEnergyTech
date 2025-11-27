@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { Card as CommonCard } from "../../components/common";
+
 export const Progress = () => {
   return (
     <Container>
@@ -18,22 +20,19 @@ export const Progress = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled(CommonCard)`
   display: flex;
-  padding: var(--spacing-3xl, 24px);
   flex-direction: column;
   gap: var(--spacing-xl, 16px);
-  border-radius: var(--radius-3xl, 20px);
-  background: var(--Colors-Background-bg-primary, #0c111d);
 `;
 
 const Title = styled.div`
   color: var(--colors-text-text-primary-900, #f5f5f6);
 
   /* Text xl/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-xl, 20px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-text-xl, 30px); /* 150% */
 `;
@@ -62,11 +61,8 @@ const Card = styled.div`
     color: var(--colors-text-text-tertiary-600, #94969c);
 
     /* Text md/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
+
     font-weight: 500;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
   > div:last-of-type {
     color: var(--colors-text-text-primary-900, #f5f5f6);
@@ -74,7 +70,7 @@ const Card = styled.div`
     /* Display xs/Bold */
     font-family: var(--Font-family-font-family-display, Outfit);
     font-size: var(--Font-size-display-xs, 24px);
-    font-style: normal;
+
     font-weight: 700;
     line-height: var(--Line-height-display-xs, 32px); /* 133.333% */
   }

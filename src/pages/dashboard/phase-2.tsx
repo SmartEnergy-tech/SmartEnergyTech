@@ -9,7 +9,7 @@ import ArrowLeftIcon from "../../assets/arrow-left.svg?react";
 import { useNavigate } from "react-router";
 
 export const Phase2 = () => {
-  const haveMax = Math.random() > 0.5;
+  const haveMax = Math.random() > 0;
 
   const navigate = useNavigate();
 
@@ -119,14 +119,16 @@ const Header = styled.div`
   border-radius: var(--radius-3xl, 20px) var(--radius-3xl, 20px) var(--radius-md, 8px) var(--radius-md, 8px);
   border: 1px solid var(--Colors-Border-border-secondary, #1f242f);
   background: var(--Colors-Background-bg-primary, #0c111d);
-
+  @media (max-width: 769px) {
+    padding: var(--spacing-2xl, 20px);
+  }
   > div:first-of-type {
     color: var(--colors-text-text-primary-900, #f5f5f6);
 
     /* Text lg/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-lg, 18px);
-    font-style: normal;
+
     font-weight: 500;
     line-height: var(--Line-height-text-lg, 28px); /* 155.556% */
   }
@@ -139,14 +141,13 @@ const Header = styled.div`
     /* Display xs/Regular */
     font-family: var(--Font-family-font-family-display, Outfit);
     font-size: var(--Font-size-display-xs, 24px);
-    font-style: normal;
-    font-weight: 400;
+
     line-height: var(--Line-height-display-xs, 32px); /* 133.333% */
     > span {
       /* Display xs/Semibold */
       font-family: var(--Font-family-font-family-display, Outfit);
       font-size: var(--Font-size-display-xs, 24px);
-      font-style: normal;
+
       font-weight: 600;
       line-height: var(--Line-height-display-xs, 32px); /* 133.333% */
 
@@ -171,6 +172,12 @@ const Content = styled.div`
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
+    > div:first-of-type {
+      border-radius: var(--radius-md, 8px);
+    }
+    > div:last-of-type {
+      border-radius: var(--radius-md, 8px) var(--radius-md, 8px) var(--radius-3xl, 20px) var(--radius-3xl, 20px);
+    }
   }
 `;
 
@@ -181,6 +188,9 @@ const Card = styled.div`
   gap: var(--spacing-xl, 16px);
   border: 1px solid var(--Colors-Border-border-secondary, #1f242f);
   background: var(--Colors-Background-bg-secondary, #161b26);
+  @media (max-width: 769px) {
+    padding: var(--spacing-2xl, 20px);
+  }
 `;
 
 const UnlockValueWithLimit = styled.div`
@@ -194,7 +204,7 @@ const UnlockValue = styled.div`
   /* Display xs/Semibold */
   font-family: var(--Font-family-font-family-display, Outfit);
   font-size: var(--Font-size-display-xs, 24px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-display-xs, 32px); /* 133.333% */
 
@@ -212,11 +222,8 @@ const Limit = styled.div`
   text-align: center;
 
   /* Text md/Bold */
-  font-family: var(--Font-family-font-family-body, Inter);
-  font-size: var(--Font-size-text-md, 16px);
-  font-style: normal;
+
   font-weight: 700;
-  line-height: var(--Line-height-text-md, 24px); /* 150% */
 `;
 
 export const TooltipData = styled.div`
@@ -227,9 +234,9 @@ export const TooltipData = styled.div`
     color: var(--Colors-Text-text-white, #fff);
 
     /* Text xs/Semibold */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-xs, 12px);
-    font-style: normal;
+
     font-weight: 600;
     line-height: var(--Line-height-text-xs, 18px); /* 150% */
   }
@@ -237,9 +244,9 @@ export const TooltipData = styled.div`
     color: var(--Component-colors-Components-Tooltips-tooltip-supporting-text, #cecfd2);
 
     /* Text xs/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-xs, 12px);
-    font-style: normal;
+
     font-weight: 500;
     line-height: var(--Line-height-text-xs, 18px); /* 150% */
   }
@@ -253,11 +260,8 @@ const ProgressContainer = styled.div`
     color: var(--colors-text-text-tertiary-600, #94969c);
 
     /* Text md/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
+
     font-weight: 500;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
 `;
 
@@ -273,11 +277,8 @@ const PowerNeeded = styled.div`
   gap: var(--spacing-xs, 4px);
   > * {
     /* Text md/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
+
     font-weight: 500;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
   > div:first-of-type {
     color: var(--colors-text-text-tertiary-600, #94969c);
@@ -297,7 +298,7 @@ const LevelToNextLevel = styled.div`
     /* Display xs/Semibold */
     font-family: var(--Font-family-font-family-display, Outfit);
     font-size: var(--Font-size-display-xs, 24px);
-    font-style: normal;
+
     font-weight: 600;
     line-height: var(--Line-height-display-xs, 32px); /* 133.333% */
 
@@ -312,11 +313,8 @@ const Rate = styled.div`
   color: var(--colors-text-text-primary-900, #f5f5f6);
 
   /* Text md/Bold */
-  font-family: var(--Font-family-font-family-body, Inter);
-  font-size: var(--Font-size-text-md, 16px);
-  font-style: normal;
+
   font-weight: 700;
-  line-height: var(--Line-height-text-md, 24px); /* 150% */
 `;
 
 const CostsToUpgrade = styled.div`
@@ -326,11 +324,8 @@ const CostsToUpgrade = styled.div`
 
   > * {
     /* Text md/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
+
     font-weight: 500;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
   > div:first-of-type {
     color: var(--colors-text-text-tertiary-600, #94969c);
@@ -406,22 +401,25 @@ const MaxContent = styled.div`
       color: var(--colors-text-text-secondary-700, #cecfd2);
 
       /* Text sm/Semibold */
-      font-family: var(--Font-family-font-family-body, Inter);
+
       font-size: var(--Font-size-text-sm, 14px);
-      font-style: normal;
+
       font-weight: 600;
       line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
     }
     .info {
       color: var(--colors-text-text-tertiary-600, #94969c);
       /* Text sm/Regular */
-      font-family: var(--Font-family-font-family-body, Inter);
+
       font-size: var(--Font-size-text-sm, 14px);
-      font-style: normal;
-      font-weight: 400;
+
       line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
       margin-bottom: var(--spacing-lg, 12px);
     }
+  }
+
+  @media (max-width: 769px) {
+    flex-direction: column;
   }
 `;
 

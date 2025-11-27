@@ -100,17 +100,14 @@ const UnlockLimitInfo = styled.div`
     color: var(--colors-text-text-secondary-700, #cecfd2);
 
     /* Text md/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
-    font-size: var(--Font-size-text-md, 16px);
-    font-style: normal;
+
     font-weight: 500;
-    line-height: var(--Line-height-text-md, 24px); /* 150% */
   }
   .value {
     /* Text lg/Semibold */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-lg, 18px);
-    font-style: normal;
+
     font-weight: 600;
     line-height: var(--Line-height-text-lg, 28px); /* 155.556% */
     background: var(--Gradient-Linear-Color-81, linear-gradient(45deg, #4b73ff 0%, #7cf7ff 100%));
@@ -128,9 +125,9 @@ const ProgressContainer = styled.div`
   color: var(--colors-text-text-secondary-700, #cecfd2);
 
   /* Text sm/Medium */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-sm, 14px);
-  font-style: normal;
+
   font-weight: 500;
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
 `;

@@ -49,12 +49,6 @@ const AllRights = styled.div`
   color: var(--colors-text-text-quaternary-500, #94969c);
   text-align: right;
 
-  /* Text md/Regular */
-  font-family: var(--Font-family-font-family-body, Inter);
-  font-size: var(--Font-size-text-md, 16px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: var(--Line-height-text-md, 24px); /* 150% */
   @media (max-width: 769px) {
     max-width: 100%;
   }

@@ -28,6 +28,7 @@
   font-size: 16px;
   font-style: normal;
   transition: all 0.25s ease-in-out;
+  min-width: 1px;
 }
 html,
 body {

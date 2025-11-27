@@ -77,9 +77,9 @@ const Label = styled.div`
   color: var(--Component-colors-Components-Buttons-Secondary-button-secondary-fg, #cecfd2);
 
   /* Text sm/Semibold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-sm, 14px);
-  font-style: normal;
+
   font-weight: 600;
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
 `;
@@ -124,9 +124,9 @@ const Option = styled.div`
     color: var(--colors-text-text-secondary-700, #cecfd2);
 
     /* Text sm/Medium */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-sm, 14px);
-    font-style: normal;
+
     font-weight: 500;
     line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
   }
@@ -134,10 +134,9 @@ const Option = styled.div`
     color: var(--colors-text-text-quaternary-500, #94969c);
 
     /* Text xs/Regular */
-    font-family: var(--Font-family-font-family-body, Inter);
+
     font-size: var(--Font-size-text-xs, 12px);
-    font-style: normal;
-    font-weight: 400;
+
     line-height: var(--Line-height-text-xs, 18px); /* 150% */
   }
 `;

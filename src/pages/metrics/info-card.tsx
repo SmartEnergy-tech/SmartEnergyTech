@@ -38,9 +38,9 @@ const Title = styled.div`
   color: var(--colors-text-text-tertiary-600, #94969c);
 
   /* Text sm/Medium */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-sm, 14px);
-  font-style: normal;
+
   font-weight: 500;
   line-height: var(--Line-height-text-sm, 20px); /* 142.857% */
 `;
@@ -52,9 +52,9 @@ const Info = styled.div`
   color: var(--colors-text-text-primary-900, #f5f5f6);
 
   /* Text xl/Bold */
-  font-family: var(--Font-family-font-family-body, Inter);
+
   font-size: var(--Font-size-text-xl, 20px);
-  font-style: normal;
+
   font-weight: 700;
   line-height: var(--Line-height-text-xl, 30px); /* 150% */
 `;
