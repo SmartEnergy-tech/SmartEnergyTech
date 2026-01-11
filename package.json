@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-oauth/google": "^0.12.2",
     "@revolut/checkout": "^1.1.23",
+    "axios": "^1.13.2",
     "effector": "^23.4.4",
     "effector-react": "^23.3.0",
     "react": "^19.1.1",

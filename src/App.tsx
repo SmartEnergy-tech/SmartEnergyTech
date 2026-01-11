@@ -15,6 +15,7 @@ import { ProfilePage } from "./pages/profile";
 import { LevelUpgradePage } from "./pages/level-upgrade";
 import { ChangePasswordPage } from "./pages/change-password";
 import { BuyPWBPage } from "./pages/buy-pwb";
+import { ActivateUserPage } from "./pages/activate-user";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,14 @@ const router = createBrowserRouter([
     path: "/forgot-password",
     element: <ForgotPasswordPage />,
   },
-  { path: "/reset-password/:token", element: <ResetPasswordPage /> },
+  {
+    path: "/reset-password",
+    element: <ResetPasswordPage />,
+  },
+  {
+    path: "/activate-user",
+    element: <ActivateUserPage />,
+  },
   {
     path: "/dashboard",
     element: (

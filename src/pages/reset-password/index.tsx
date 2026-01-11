@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useSearchParams } from "react-router";
 import { toast } from "react-toastify";
 
 import lockImg from "../../assets/lock.svg";
@@ -12,9 +12,12 @@ import { Field } from "../../components/field";
 import { PrimaryButton } from "../../components/button";
 import showEyeIcon from "../../assets/show-eye.svg";
 import hideEyeIcon from "../../assets/hide-eye.svg";
+import { setIsAuthenticated } from "../../store";
+import axios from "axios";
 
 export const ResetPasswordPage = () => {
   const [restored, setRestored] = useState(false);
+  const [token, setToken] = useState("");
 
   const navigate = useNavigate();
 
@@ -22,7 +25,11 @@ export const ResetPasswordPage = () => {
     <>
       <Header />
       <Container>
-        {restored ? <RestoredPassword /> : <ResetForm onRestored={() => setRestored(true)} />}
+        {restored ? (
+          <RestoredPassword token={token} />
+        ) : (
+          <ResetForm onRestored={() => setRestored(true)} setToken={setToken} />
+        )}
         <BackToLogin onClick={() => navigate("/log-in")}>
           <ArrowLeftIcon />
           Log In
@@ -32,7 +39,7 @@ export const ResetPasswordPage = () => {
   );
 };
 
-const ResetForm = ({ onRestored }: { onRestored: () => void }) => {
+const ResetForm = ({ onRestored, setToken }: { onRestored: () => void; setToken: (value: string) => void }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -41,6 +48,9 @@ const ResetForm = ({ onRestored }: { onRestored: () => void }) => {
   const [passAreSame, setPassAreSame] = useState(false);
 
   const [showPassword, setShowPassword] = useState({ password: false, confirmPassword: false });
+
+  const [params] = useSearchParams();
+  const code = params.get("code");
 
   useEffect(() => {
     const min8Chars = /^.{8,}$/.test(password);
@@ -54,6 +64,8 @@ const ResetForm = ({ onRestored }: { onRestored: () => void }) => {
 
   const onSubmit = async () => {
     try {
+      const res = await axios.post("/auth/reset-password", { code, password, confirmed_password: confirmPassword });
+      setToken(res.data.token);
       onRestored();
     } catch (error) {
       console.error(error);
@@ -143,8 +155,15 @@ const ResetForm = ({ onRestored }: { onRestored: () => void }) => {
   );
 };
 
-const RestoredPassword = () => {
+const RestoredPassword = ({ token }: { token: string }) => {
   const navigate = useNavigate();
+
+  const onLogin = () => {
+    localStorage.setItem("jwt", token);
+    setIsAuthenticated(token);
+    navigate("/dashboard");
+  };
+
   return (
     <>
       <IconContainer>
@@ -152,7 +171,7 @@ const RestoredPassword = () => {
       </IconContainer>
       <Title>Password reset</Title>
       <Info>Your password has been successfully reset. Click below to log in magically.</Info>
-      <PrimaryButton style={{ marginBottom: "var(--spacing-4xl, 32px)" }} onClick={() => navigate("/log-in")}>
+      <PrimaryButton style={{ marginBottom: "var(--spacing-4xl, 32px)" }} onClick={onLogin}>
         Continue
       </PrimaryButton>
     </>

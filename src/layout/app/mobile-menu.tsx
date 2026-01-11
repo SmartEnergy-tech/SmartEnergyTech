@@ -41,7 +41,7 @@ export const MobileMenu = () => {
   const onLogout = () => {
     toggle();
     localStorage.removeItem("jwt");
-    setIsAuthenticated(false);
+    setIsAuthenticated("");
   };
 
   const goTo = (path: string) => {

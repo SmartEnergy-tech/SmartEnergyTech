@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 import { LoginLayout } from "../../layout/auth";
 import { GoogleAuth } from "../../components/auth-google";
@@ -26,8 +28,14 @@ export const SignUpPage = () => {
   const onChangeEmail = (email: string) => setState((state) => ({ ...state, email }));
   const onChangePassword = (password: string) => setState((state) => ({ ...state, password }));
 
-  const onSubmit = () => {
-    console.log("log => onSubmit", state);
+  const onSubmit = async () => {
+    try {
+      await axios.post("/auth/register", state);
+      toast.success("Verify email to confirm registration.");
+    } catch (error: any) {
+      const message = error.response.data.message || "Unknown error";
+      toast.error(`Failed to register: ${message}`);
+    }
   };
 
   return (

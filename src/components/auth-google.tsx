@@ -11,7 +11,7 @@ interface Props {
 export const GoogleAuth = ({ type }: Props) => {
   const auth = useGoogleLogin({
     onSuccess: (credentialResponse) => {
-      setIsAuthenticated(true);
+      setIsAuthenticated(credentialResponse.access_token);
       localStorage.setItem("jwt", credentialResponse.access_token);
     },
     onError: () => {

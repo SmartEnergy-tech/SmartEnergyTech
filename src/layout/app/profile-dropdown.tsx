@@ -17,7 +17,7 @@ export const ProfileDropdown = () => {
   const onLogout = () => {
     toggle();
     localStorage.removeItem("jwt");
-    setIsAuthenticated(false);
+    setIsAuthenticated("");
   };
 
   const goToProfile = () => {

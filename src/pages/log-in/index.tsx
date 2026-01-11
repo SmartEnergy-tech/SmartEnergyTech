@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { useMemo, useState } from "react";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 import { LoginLayout } from "../../layout/auth";
 import { GoogleAuth } from "../../components/auth-google";
@@ -9,6 +11,7 @@ import hideEyeIcon from "../../assets/hide-eye.svg";
 import { Checkbox } from "../../components/checkbox";
 import { useNavigate } from "react-router";
 import { PrimaryButton } from "../../components/button";
+import { setIsAuthenticated } from "../../store";
 
 export const LogInPage = () => {
   const [state, setState] = useState({
@@ -17,8 +20,9 @@ export const LogInPage = () => {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const isBtnDisabled = useMemo(() => Object.values(state).some((el) => !el), [state]);
+  const isBtnDisabled = useMemo(() => isLoading || Object.values(state).some((el) => !el), [state, isLoading]);
 
   const navigate = useNavigate();
   const toForgotPassword = () => navigate("/forgot-password");
@@ -26,6 +30,23 @@ export const LogInPage = () => {
 
   const onChangeEmail = (email: string) => setState((state) => ({ ...state, email }));
   const onChangePassword = (password: string) => setState((state) => ({ ...state, password }));
+
+  const onSubmit = async () => {
+    try {
+      setIsLoading(true);
+      const res = await axios.post("/auth/login", state);
+      toast.success("Successfully authenticated");
+      localStorage.setItem("jwt", res.data.token);
+      setIsAuthenticated(res.data.token);
+      // navigate("/dashboard");
+    } catch (error: any) {
+      console.error(error);
+      const message = error.response.data.message || "Unknown error";
+      toast.error(message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <LoginLayout>
@@ -61,7 +82,7 @@ export const LogInPage = () => {
           <Checkbox checked={rememberMe} onChange={setRememberMe} label=" Remember for 30 days" />
           <ForgotPassword onClick={toForgotPassword}>Forgot password</ForgotPassword>
         </RememberMe>
-        <PrimaryButton disabled={isBtnDisabled} style={{ marginBottom: "16px" }}>
+        <PrimaryButton disabled={isBtnDisabled} style={{ marginBottom: "16px" }} onClick={onSubmit}>
           Log In
         </PrimaryButton>
         <GoogleAuth type="login" />

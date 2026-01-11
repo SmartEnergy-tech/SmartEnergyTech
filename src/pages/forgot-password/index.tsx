@@ -10,6 +10,7 @@ import { Header } from "../../components/header";
 import { Field } from "../../components/field";
 import { PrimaryButton } from "../../components/button";
 import { ErrorMessage } from "../../components/error-message";
+import axios from "axios";
 
 export const ForgotPasswordPage = () => {
   const [emailSent, setEmailSent] = useState(false);
@@ -48,6 +49,7 @@ const ForgotForm = ({ onSent, email, setEmail }: ForgotFormProps) => {
 
   const onSubmit = async () => {
     try {
+      await axios.post("/auth/forgot-password", { email });
       onSent();
     } catch (error) {
       console.error(error);
